@@ -10,7 +10,7 @@ InnerHTML = ""
 
 with open(filename + file_extension, 'r') as f:
     InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
-        'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True)])
+        'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
 
 DOC = """<!DOCTYPE html>
 <html>
