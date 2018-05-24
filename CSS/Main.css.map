@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,yCAAyC;CAAI",
     "sources": [
-        "../SASS/Markdown.sass"
+        "../SASS/Main.sass"
     ],
     "names": [],
-    "file": "Markdown.css"
+    "file": "Main.css"
 }
