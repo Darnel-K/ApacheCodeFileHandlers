@@ -131,7 +131,7 @@ Both versions require "AllowOverride All" activated on the web server for the di
         print(DOC)
 
 ```
-#!/usr/local/bin/python3.6
+:::python
 import markdown
 import cgitb
 import os
