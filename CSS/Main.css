@@ -10,6 +10,17 @@ body {
   padding: 10px;
 }
 
+body blockquote {
+  padding: 1px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid red;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+  margin: 10px;
+  font-size: small;
+}
+
 .codehilite, .codehilitetable {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
