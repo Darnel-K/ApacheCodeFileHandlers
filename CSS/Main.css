@@ -16,6 +16,10 @@ body {
   margin: 10px;
 }
 
+.codehilite pre, .codehilitetable pre {
+  margin: 0;
+}
+
 .codehilite .linenos, .codehilitetable .linenos {
   padding: 0 10px 0 0;
 }
