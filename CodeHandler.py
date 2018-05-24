@@ -4,9 +4,11 @@ import markdown
 import os
 from markdown.extensions.toc import TocExtension
 
+filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
+
 InnerHTML = ""
 
-with open(os.environ['PATH_TRANSLATED'], 'r') as f:
+with open(filename + file_extension, 'r') as f:
     InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
         'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True)])
 
