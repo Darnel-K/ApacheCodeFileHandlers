@@ -202,3 +202,23 @@ DOC = """<!DOCTYPE html>
 print("Content-type:text/html\r\n\r\n")
 print(DOC)
 ```
+
+```
+## Installation Instructions:
+
+Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.<br>
+
+### Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)
+
+**You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server**
+
+> This version will set this theme as the default for every directory in which indexing is active.
+>
+> 1.  Clone this repository to a directory inside the ServerRoot.
+> 2.  Copy "IncludeTheme.conf.sample" to "IncludeTheme.conf"
+> 3.  Edit lines 1 & 3 of "IncludeTheme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
+> 4.  Edit line 9 of "IncludeTheme.conf" changing [ThemeConfLocation]" to the location of the "NSSTFAI.conf" file relative to the ServerRoot.
+> 5.  Copy "IncludeTheme.conf" to the apache includes directory.
+> 6.  Restart / Reload the apache server
+> 7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
+```
