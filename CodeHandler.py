@@ -1,8 +1,11 @@
 #!/usr/local/bin/python3.6
 
 import markdown
+import cgitb
 import os
 from markdown.extensions.toc import TocExtension
+
+cgitb.enable()
 
 filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
 

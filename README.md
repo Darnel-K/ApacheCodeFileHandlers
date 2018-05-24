@@ -92,3 +92,77 @@ Both versions require "AllowOverride All" activated on the web server for the di
 *   [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
 *   [jQuery](https://jquery.com/)
 *   [Icons Used From Icons8](https://icons8.com/)
+
+
+        #!/usr/local/bin/python3.6
+
+        import markdown
+        import cgitb
+        import os
+        from markdown.extensions.toc import TocExtension
+
+        cgitb.enable()
+
+        filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
+
+        InnerHTML = ""
+
+        with open(filename + file_extension, 'r') as f:
+            InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
+                'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
+
+        DOC = """<!DOCTYPE html>
+        <html>
+        <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
+        </head>
+        <body>
+        """ + InnerHTML + """
+        </body>
+        </html>"""
+
+        # # file = open(file="output.html", mode="w", encoding="utf-8")
+        # # file.write(DOC)
+        # # file.close()
+
+        print("Content-type:text/html\r\n\r\n")
+        print(DOC)
+
+```
+#!/usr/local/bin/python3.6
+import markdown
+import cgitb
+import os
+from markdown.extensions.toc import TocExtension
+
+cgitb.enable()
+
+filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
+
+InnerHTML = ""
+
+with open(filename + file_extension, 'r') as f:
+    InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
+        'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
+
+DOC = """<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
+</head>
+<body>
+""" + InnerHTML + """
+</body>
+</html>"""
+
+# # file = open(file="output.html", mode="w", encoding="utf-8")
+# # file.write(DOC)
+# # file.close()
+
+print("Content-type:text/html\r\n\r\n")
+print(DOC)
+```
