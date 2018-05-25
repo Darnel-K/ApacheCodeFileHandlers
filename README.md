@@ -94,6 +94,7 @@ Both versions require "AllowOverride All" activated on the web server for the di
 *   [Icons Used From Icons8](https://icons8.com/)
 
 ```
+:::#!python
 import markdown
 import cgitb
 import os
@@ -151,8 +152,7 @@ print("Content-type:text/html\r\n\r\n")
 print(DOC)
 ```
 
-:::
-
+```
 import markdown
 import cgitb
 import os
@@ -208,4 +208,4 @@ DOC.append("</html>")
 DOC = ''.join(DOC)
 print("Content-type:text/html\r\n\r\n")
 print(DOC)
-:::
+```
