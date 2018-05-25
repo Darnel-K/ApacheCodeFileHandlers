@@ -59,6 +59,11 @@ header h1 {
   display: grid;
 }
 
+.codehilitetable {
+  width: -webkit-calc(100vw - (16px * 2));
+  width: calc(100vw - (16px * 2));
+}
+
 body {
   color: #1F1F1F;
   background-color: #FAFAFA;
