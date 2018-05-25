@@ -3,6 +3,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  display: grid;
   font-family: Consolas, Monospace;
 }
 
@@ -45,8 +46,6 @@ header {
   width: calc(100vw - (16px * 2));
   position: fixed;
   z-index: 50;
-  top: 0;
-  left: 0;
   display: grid;
 }
 
@@ -62,10 +61,26 @@ header h1 {
   width: calc(100vw - (16px * 2));
   margin-top: -webkit-calc(40px + (16px * 2));
   margin-top: calc(40px + (16px * 2));
+  display: grid;
+  grid-template-columns: 100%;
 }
 
 .codehilite {
   overflow-x: auto;
+  padding: 10px;
+  font-size: small;
+}
+
+.codehilite pre {
+  margin: 0;
+}
+
+.codehilitetable {
+  font-size: small;
+}
+
+.codehilitetable .linenos {
+  padding: 0 10px 0 0;
 }
 
 body {

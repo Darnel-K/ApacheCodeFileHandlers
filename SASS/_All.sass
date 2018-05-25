@@ -3,7 +3,7 @@ body
     overflow-x: hidden
     margin: 0
     padding: 0
-    // display: grid
+    display: grid
     font-family: $DefaultFont
 body ol, body ul, body blockquote, body p
     font-size: small
@@ -35,8 +35,6 @@ header
     width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
     position: fixed
     z-index: 50
-    top: 0
-    left: 0
     display: grid
     h1
         margin: 0
@@ -47,16 +45,16 @@ header
     padding: $DocPadding
     width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
     margin-top: calc(#{$HeaderHeight} + (#{$DocPadding} * 2))
-    // display: grid
-    // grid-template-columns: 100%
+    display: grid
+    grid-template-columns: 100%
 
 .codehilite
     overflow-x: auto
-//     padding: 10px
-//     font-size: small
-//     pre
-//         margin: 0
-// .codehilitetable
-//     font-size: small
-//     .linenos
-//         padding: 0 10px 0 0
+    padding: 10px
+    font-size: small
+    pre
+        margin: 0
+.codehilitetable
+    font-size: small
+    .linenos
+        padding: 0 10px 0 0
