@@ -13,7 +13,7 @@ filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
 InnerHTMLString = ""
 DOC = []
 
-with open(filename, file_extension, 'r') as f:
+with open(filename + file_extension, 'r') as f:
     InnerHTMLString = markdown.markdown(text=f.read(), output_format="html5", extensions=[
         'subscript', 'superscript', 'markdown_checklist.extension', 'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
 
