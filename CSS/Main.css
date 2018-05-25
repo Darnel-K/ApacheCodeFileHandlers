@@ -6,17 +6,17 @@ html, body {
 body {
   font-family: consolas, monospace, Courier New, Courier;
   background-color: #1F1F1F;
-  color: #999;
+  color: #FFF;
   padding: 10px;
 }
 
 body a {
-  color: #FFF;
+  color: #AAA;
   text-decoration: none;
 }
 
 body a:hover {
-  color: #999;
+  color: #FFF;
 }
 
 body ol, body ul, body blockquote, body p {
