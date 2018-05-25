@@ -13,20 +13,19 @@ body
         padding: 1px 10px
         background-color: rgba(0,0,0,0.3)
         border-left: 3px solid red
-        width: fill-available
         margin: 10px
-
-
-.codehilite, .codehilitetable
-    background-color: rgba(0, 0, 0, 0.30)
-    padding: 10px
-    margin: 10px
-    pre
+    .codehilite, .codehilitetable, blockquote
+        width: fill-available
+    .codehilite, .codehilitetable
+        background-color: rgba(0, 0, 0, 0.30)
+        padding: 10px
+        margin: 10px
+        pre
+            margin: 0
+        .linenos
+            padding: 0 10px 0 0
+    .codehilitetable .codehilite
+        background-color: initial
+        padding: 0
         margin: 0
-    .linenos
-        padding: 0 10px 0 0
-
-.codehilitetable .codehilite
-    background-color: initial
-    padding: 0
-    margin: 0
+        width: initial
