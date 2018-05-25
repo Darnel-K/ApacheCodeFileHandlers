@@ -20,7 +20,6 @@ with open(filename + file_extension, 'r') as f:
 InnerHTML = InnerHTMLString.splitlines()
 Heading = None
 HeadSearch = re.search('<(h1)[\s>]', InnerHTML[0])
-print(HeadSearch)
 if (HeadSearch is not None):
     if (HeadSearch.group(1) == "h1"):
         Heading = re.search('<h1.*><a.*>(.*)<\/a><\/h1>',
