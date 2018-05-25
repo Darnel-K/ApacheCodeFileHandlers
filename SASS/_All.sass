@@ -1,5 +1,5 @@
 body
-    width: 100vw
+    width: $DocWidth
     overflow-x: hidden
     margin: 0
     padding: 0
@@ -28,11 +28,13 @@ body
 
 header
     height: $HeaderHeight
-    margin: 16px
+    padding: $DocPadding
+    width: $DocWidth
     h1
         margin: 0
         line-height: $HeaderHeight
         vertical-align: middle
 
 #Wrapper
-    padding: 16px
+    padding: $DocPadding
+    margin-top: calc(#{$HeaderHeight} + (#{$DocPadding} * 2))
