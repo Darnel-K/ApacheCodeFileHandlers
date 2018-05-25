@@ -68,10 +68,15 @@ header h1 {
 .codehilite {
   overflow-x: auto;
   padding: 10px;
+  font-size: small;
 }
 
 .codehilite pre {
   margin: 0;
+}
+
+.codehilitetable {
+  font-size: small;
 }
 
 .codehilitetable .linenos {
