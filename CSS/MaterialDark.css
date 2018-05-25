@@ -33,6 +33,11 @@ body {
   border: thin solid #666;
 }
 
+header {
+  height: 56px;
+  padding: 16px;
+}
+
 .codehilite {
   background: #202020;
   color: #d0d0d0;
