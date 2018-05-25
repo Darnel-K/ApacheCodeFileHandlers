@@ -8,7 +8,7 @@ from markdown.extensions.toc import TocExtension
 
 cgitb.enable()
 
-DIRNAME, FullFileName = os.path.split(os.path.abspath(__file__))
+DIRNAME, FullFileName = os.path.split(os.environ['PATH_TRANSLATED'])
 filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
 
 InnerHTMLString = ""
@@ -41,7 +41,7 @@ if (Heading is not None):
     DOC.append("</header>")
 else:
     DOC.append("<header>")
-    DOC.append("<h1>" + filename + file_extension + "</h1>")
+    DOC.append("<h1>" + FullFileName + file_extension + "</h1>")
     DOC.append("</header>")
 
 DOC.extend(InnerHTML)
