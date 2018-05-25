@@ -63,6 +63,11 @@ header h1 {
 
 .codehilite {
   overflow-x: auto;
+  padding: 10px;
+}
+
+.codehilite pre {
+  margin: 0;
 }
 
 body {
