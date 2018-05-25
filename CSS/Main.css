@@ -19,6 +19,11 @@ body blockquote {
   background-color: rgba(0, 0, 0, 0.3);
   border-left: 3px solid red;
   margin: 10px;
+  overflow: hidden;
+}
+
+body .codehilite {
+  overflow-x: auto;
 }
 
 body .codehilite, body .codehilitetable, body blockquote {
