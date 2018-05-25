@@ -4,7 +4,11 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  font-family: "Roboto", "Consolas", "Monospace";
+  font-family: "Consolas", "Monospace";
+}
+
+body ol, body ul, body blockquote, body p {
+  font-size: small;
 }
 
 ::-webkit-scrollbar {
@@ -68,6 +72,10 @@ header h1 {
 
 .codehilite pre {
   margin: 0;
+}
+
+.codehilitetable .linenos {
+  padding: 0 10px 0 0;
 }
 
 body {

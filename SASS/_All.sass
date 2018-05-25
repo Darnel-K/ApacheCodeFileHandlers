@@ -5,6 +5,8 @@ body
     padding: 0
     display: grid
     font-family: $DefaultFont
+body ol, body ul, body blockquote, body p
+    font-size: small
 
 ::-webkit-scrollbar
     height: 4px
@@ -51,5 +53,6 @@ header
     padding: 10px
     pre
         margin: 0
-// .codehilitetable
-    // width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
+.codehilitetable
+    .linenos
+        padding: 0 10px 0 0
