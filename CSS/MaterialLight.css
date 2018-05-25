@@ -3,6 +3,34 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+::-webkit-scrollbar-button {
+  height: 0px;
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border: thin solid #808080;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+  border: thin solid #666;
+}
+
 .codehilite .hll {
   background-color: #ffffcc;
   background: #f8f8f8;
