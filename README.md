@@ -1,226 +1,308 @@
-# NSSTFAI
+# Markdown: Syntax
 
-A Not So Simple Theme For Apache's Index
+*   [Overview](#overview)
+    *   [Philosophy](#philosophy)
+    *   [Inline HTML](#html)
+    *   [Automatic Escaping for Special Characters](#autoescape)
+*   [Block Elements](#block)
+    *   [Paragraphs and Line Breaks](#p)
+    *   [Headers](#header)
+    *   [Blockquotes](#blockquote)
+    *   [Lists](#list)
+    *   [Code Blocks](#precode)
+    *   [Horizontal Rules](#hr)
+*   [Span Elements](#span)
+    *   [Links](#link)
+    *   [Emphasis](#em)
+    *   [Code](#code)
+    *   [Images](#img)
+*   [Miscellaneous](#misc)
+    *   [Backslash Escapes](#backslash)
+    *   [Automatic Links](#autolink)
 
-[View Changelog](CHANGELOG.md)
+**Note:** This document is itself written using Markdown; you
+can [see the source for it by adding '.text' to the URL](/projects/markdown/syntax.text).
 
-[Demo](http://rs01.kajida.uk/GitHub/Experimental-Code) showing a clone of one of my other repositories, setup globally.
+---
 
-This theme now has a name however if you have any other ideas please, leave your suggestions [here](https://github.com/Darnel-K/Apache-Index-Theme/issues/1).
+## Overview
 
-- [NSSTFAI](#nsstfai)
-    - [Installation Instructions:](#installation-instructions)
-        - [Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)](#method-1---installing-the-global-version-requires-access-to-the-host-system-and-web-server)
-        - [Method 2 - Installing The .htaccess version](#method-2---installing-the-htaccess-version)
-    - [Variations:](#variations)
-    - [Help:](#help)
-    - [TO-DO:](#to-do)
-    - [Resources Used:](#resources-used)
+### Philosophy
 
-## Installation Instructions:
+Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
 
-Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.<br>
+Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it's been marked up with tags or formatting instructions. While
+Markdown's syntax has been influenced by several existing text-to-HTML
+filters -- including [Setext](http://docutils.sourceforge.net/mirror/setext.html), [atx](http://www.aaronsw.com/2002/atx/), [Textile](http://textism.com/tools/textile/), [reStructuredText](http://docutils.sourceforge.net/rst.html),
+[Grutatext](http://www.triptico.com/software/grutatxt.html), and [EtText](http://ettext.taint.org/doc/) -- the single biggest source of
+inspiration for Markdown's syntax is the format of plain text email.
 
-### Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)
+## Block Elements
 
-**You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server**
+### Paragraphs and Line Breaks
 
-> This version will set this theme as the default for every directory in which indexing is active.
+A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line -- a line containing nothing but spaces or tabs is considered
+blank.) Normal paragraphs should not be indented with spaces or tabs.
+
+The implication of the "one or more consecutive lines of text" rule is
+that Markdown supports "hard-wrapped" text paragraphs. This differs
+significantly from most other text-to-HTML formatters (including Movable
+Type's "Convert Line Breaks" option) which translate every line break
+character in a paragraph into a `<br />` tag.
+
+When you _do_ want to insert a `<br />` break tag using Markdown, you
+end a line with two or more spaces, then type return.
+
+### Headers
+
+Markdown supports two styles of headers, [Setext][1] and [atx][2].
+
+Optionally, you may "close" atx-style headers. This is purely
+cosmetic -- you can use this if you think it looks better. The
+closing hashes don't even need to match the number of hashes
+used to open the header. (The number of opening hashes
+determines the header level.)
+
+### Blockquotes
+
+Markdown uses email-style `>` characters for blockquoting. If you're
+familiar with quoting passages of text in an email message, then you
+know how to create a blockquote in Markdown. It looks best if you hard
+wrap the text and put a `>` before every line:
+
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 >
-> 1.  Clone this repository to a directory inside the ServerRoot.
-> 2.  Copy "IncludeTheme.conf.sample" to "IncludeTheme.conf"
-> 3.  Edit lines 1 & 3 of "IncludeTheme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
-> 4.  Edit line 9 of "IncludeTheme.conf" changing [ThemeConfLocation]" to the location of the "NSSTFAI.conf" file relative to the ServerRoot.
-> 5.  Copy "IncludeTheme.conf" to the apache includes directory.
-> 6.  Restart / Reload the apache server
-> 7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
 
-### Method 2 - Installing The .htaccess version
+Markdown allows you to be lazy and only put the `>` before the first
+line of a hard-wrapped paragraph:
 
-    This version is only active on the directory that contains the required files and all sub-directories with indexing allowed.
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
-    1.  Download a copy of the folder "NSSTFAI" and the file ".htaccess".
-    2.  Copy, upload or move the folder "NSSTFAI" to your domain's root directory
-    3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies to all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
-    4.  In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.
 
-## Variations:
+Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
+adding additional levels of `>`:
 
-*   [Dark (Default), Branch: MASTER](//github.com/Darnel-K/NSSTFAI/tree/master)
-
-## Help:
-
-*   Left Arrow / Backspace: Goes to the previous directory if available.
-*   Right Arrow: Will enter / open the currently selected directory / file.
-*   Up Arrow: Navigates the selector up one.
-*   Down Arrow: Navigates the selector down one.
-*   S Key: Toggles Settings Screen
-
-## TO-DO:
-
-*   [ ] Add Credits Screen
-*   [ ] Video Player
-*   [ ] Audio Player
-*   [ ] Image Viewer
-*   [x] Clean CSS
-*   [x] Convert CSS To SASS
-*   [ ] Create Unix .sh Installer
-*   [ ] Create Windows .bat Installer
-*   [ ] Add Help Screen
-*   [ ] Acquire Logo For Theme
-*   [ ] Logo Favicon
-*   [x] Create Separate Layout For Desktop & Mobile
-*   [x] Disable Some Features On Small Screens
-*   [x] Make Responsive
-*   [ ] Add Optional Table Header / Footer
-*   [x] Redo The Update Check Code
-*   [x] Rewrite Settings Screen HTML & JS
-*   [x] Implement Console Logging Into The JS
-*   [x] Pick A Name
-*   [x] Rewrite The JS Settings
-*   [x] Add Arrow Key Navigation
-*   [x] Replace All Instances Of "ThemeName" With Chosen Name
-*   [x] Upload Files To GitHub
-*   [x] Create htaccess Directory Version
-*   [x] Add Setup Instructions For Both Versions
-*   [x] Cleanup Files & Remove Duplicates
-
-## Resources Used:
-
-*   [jscolor Color Picker](http://jscolor.com/)
-*   [jQuery-rcrumbs Responsive Breadcrumb](https://github.com/cm0s/jquery-rcrumbs)
-*   [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
-*   [jQuery](https://jquery.com/)
-*   [Icons Used From Icons8](https://icons8.com/)
-
-
-        #!/usr/local/bin/python3.6
-
-        import markdown
-        import cgitb
-        import os
-        from markdown.extensions.toc import TocExtension
-
-        cgitb.enable()
-
-        filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
-
-        InnerHTML = ""
-
-        with open(filename + file_extension, 'r') as f:
-            InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
-                'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
-
-        DOC = """<!DOCTYPE html>
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
-        </head>
-        <body>
-        """ + InnerHTML + """
-        </body>
-        </html>"""
-
-        # # file = open(file="output.html", mode="w", encoding="utf-8")
-        # # file.write(DOC)
-        # # file.close()
-
-        print("Content-type:text/html\r\n\r\n")
-        print(DOC)
-
-```
-#!python
-import markdown
-import cgitb
-import os
-from markdown.extensions.toc import TocExtension
-
-cgitb.enable()
-
-filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
-
-InnerHTML = ""
-
-with open(filename + file_extension, 'r') as f:
-    InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
-        'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
-
-DOC = """<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
-</head>
-<body>
-""" + InnerHTML + """
-</body>
-</html>"""
-
-# # file = open(file="output.html", mode="w", encoding="utf-8")
-# # file.write(DOC)
-# # file.close()
-
-print("Content-type:text/html\r\n\r\n")
-print(DOC)
-```
-
-```
-import markdown
-import cgitb
-import os
-from markdown.extensions.toc import TocExtension
-
-cgitb.enable()
-
-filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
-
-InnerHTML = ""
-
-with open(filename + file_extension, 'r') as f:
-    InnerHTML = markdown.markdown(text=f.read(), output_format="html5", extensions=[
-        'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
-
-DOC = """<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
-</head>
-<body>
-""" + InnerHTML + """
-</body>
-</html>"""
-
-# # file = open(file="output.html", mode="w", encoding="utf-8")
-# # file.write(DOC)
-# # file.close()
-
-print("Content-type:text/html\r\n\r\n")
-print(DOC)
-```
-
-```
-## Installation Instructions:
-
-Both versions require "AllowOverride All" activated on the web server for the directories that use the ".htaccess" files.<br>
-
-### Method 1 - Installing The Global Version (Requires Access To The Host System And Web Server)
-
-**You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server**
-
-> This version will set this theme as the default for every directory in which indexing is active.
+> This is the first level of quoting.
 >
-> 1.  Clone this repository to a directory inside the ServerRoot.
-> 2.  Copy "IncludeTheme.conf.sample" to "IncludeTheme.conf"
-> 3.  Edit lines 1 & 3 of "IncludeTheme.conf" changing "[ThemeFilesLocation]" to the location of the "NSSTFAI" folder.
-> 4.  Edit line 9 of "IncludeTheme.conf" changing [ThemeConfLocation]" to the location of the "NSSTFAI.conf" file relative to the ServerRoot.
-> 5.  Copy "IncludeTheme.conf" to the apache includes directory.
-> 6.  Restart / Reload the apache server
-> 7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
+> > This is nested blockquote.
+>
+> Back to the first level.
+
+Blockquotes can contain other Markdown elements, including headers, lists,
+and code blocks:
+
+> ## This is a header.
+>
+> 1.  This is the first list item.
+> 2.  This is the second list item.
+>
+> Here's some example code:
+>
+>     return shell_exec("echo $input | $markdown_script");
+
+Any decent text editor should make email-style quoting easy. For
+example, with BBEdit, you can make a selection and choose Increase
+Quote Level from the Text menu.
+
+### Lists
+
+Markdown supports ordered (numbered) and unordered (bulleted) lists.
+
+Unordered lists use asterisks, pluses, and hyphens -- interchangably
+-- as list markers:
+
+*   Red
+*   Green
+*   Blue
+
+is equivalent to:
+
+*   Red
+*   Green
+*   Blue
+
+and:
+
+*   Red
+*   Green
+*   Blue
+
+Ordered lists use numbers followed by periods:
+
+1.  Bird
+2.  McHale
+3.  Parish
+
+It's important to note that the actual numbers you use to mark the
+list have no effect on the HTML output Markdown produces. The HTML
+Markdown produces from the above list is:
+
+If you instead wrote the list in Markdown like this:
+
+1.  Bird
+1.  McHale
+1.  Parish
+
+or even:
+
+3.  Bird
+1.  McHale
+1.  Parish
+
+you'd get the exact same HTML output. The point is, if you want to,
+you can use ordinal numbers in your ordered Markdown lists, so that
+the numbers in your source match the numbers in your published HTML.
+But if you want to be lazy, you don't have to.
+
+To make lists look nice, you can wrap items with hanging indents:
+
+*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+
+But if you want to be lazy, you don't have to:
+
+*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+
+List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces
+or one tab:
+
+1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+
+It looks nice if you indent every line of the subsequent
+paragraphs, but here again, Markdown will allow you to be
+lazy:
+
+*   This is a list item with two paragraphs.
+
+        This is the second paragraph in the list item. You're
+
+    only required to indent the first line. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit.
+
+*   Another item in the same list.
+
+To put a blockquote within a list item, the blockquote's `>`
+delimiters need to be indented:
+
+*   A list item with a blockquote:
+
+    > This is a blockquote
+    > inside a list item.
+
+To put a code block within a list item, the code block needs
+to be indented _twice_ -- 8 spaces or two tabs:
+
+*   A list item with a code block:
+
+        <code goes here>
+
+### Code Blocks
+
+Pre-formatted code blocks are used for writing about programming or
+markup source code. Rather than forming normal paragraphs, the lines
+of a code block are interpreted literally. Markdown wraps a code block
+in both `<pre>` and `<code>` tags.
+
+To produce a code block in Markdown, simply indent every line of the
+block by at least 4 spaces or 1 tab.
+
+This is a normal paragraph:
+
+    This is a code block.
+
+Here is an example of AppleScript:
+
+    tell application "Foo"
+        beep
+    end tell
+
+A code block continues until it reaches a line that is not indented
+(or the end of the article).
+
+Within a code block, ampersands (`&`) and angle brackets (`<` and `>`)
+are automatically converted into HTML entities. This makes it very
+easy to include example HTML source code using Markdown -- just paste
+it and indent it, and Markdown will handle the hassle of encoding the
+ampersands and angle brackets. For example, this:
+
+    <div class="footer">
+        &copy; 2004 Foo Corporation
+    </div>
+
+Regular Markdown syntax is not processed within code blocks. E.g.,
+asterisks are just literal asterisks within a code block. This means
+it's also easy to use Markdown to write about Markdown's own syntax.
+
+```
+tell application "Foo"
+    beep
+end tell
 ```
 
-`quote`
+## Span Elements
+
+### Links
+
+Markdown supports two style of links: _inline_ and _reference_.
+
+In both styles, the link text is delimited by [square brackets].
+
+To create an inline link, use a set of regular parentheses immediately
+after the link text's closing square bracket. Inside the parentheses,
+put the URL where you want the link to point, along with an _optional_
+title for the link, surrounded in quotes. For example:
+
+This is [an example](http://example.com/) inline link.
+
+[This link](http://example.net/) has no title attribute.
+
+### Emphasis
+
+Markdown treats asterisks (`*`) and underscores (`_`) as indicators of
+emphasis. Text wrapped with one `*` or `_` will be wrapped with an
+HTML `<em>` tag; double `*`'s or `_`'s will be wrapped with an HTML
+`<strong>` tag. E.g., this input:
+
+_single asterisks_
+
+_single underscores_
+
+**double asterisks**
+
+**double underscores**
+
+### Code
+
+To indicate a span of code, wrap it with backtick quotes (`` ` ``).
+Unlike a pre-formatted code block, a code span indicates code within a
+normal paragraph. For example:
+
+Use the `printf()` function.
