@@ -52,6 +52,6 @@ DOC.append("</div>")
 DOC.append("</body>")
 DOC.append("</html>")
 
-DOC = ''.join(DOC)
+DOC = '\n'.join(DOC)
 print("Content-type:text/html\r\n\r\n")
 print(DOC)
