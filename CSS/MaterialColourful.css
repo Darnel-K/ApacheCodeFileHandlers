@@ -61,7 +61,6 @@ header h1 {
   width: calc(100vw - (16px * 2));
   margin-top: -webkit-calc(40px + (16px * 2));
   margin-top: calc(40px + (16px * 2));
-  display: grid;
   grid-template-columns: 100%;
 }
 
