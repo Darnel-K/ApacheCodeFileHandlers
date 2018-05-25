@@ -46,7 +46,8 @@ else:
     DOC.append("</header>")
 
 DOC.append("<div id='Wrapper'>")
-DOC.extend(InnerHTML)
+# DOC.extend(InnerHTML)
+DOC.append(InnerHTMLString)
 DOC.append("</div>")
 DOC.append("</body>")
 DOC.append("</html>")
