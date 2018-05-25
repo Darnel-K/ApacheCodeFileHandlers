@@ -18,11 +18,13 @@ with open(filename + file_extension, 'r') as f:
 DOC = """<!DOCTYPE html>
 <html>
 <head>
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/CodeHandler/CSS/materialize.min.css"  media="screen,projection"/>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="/CodeHandler/CSS/MaterialLight.min.css">
 </head>
-<body>
-""" + InnerHTML + """
+<body>""" + InnerHTML + """<script type="text/javascript" src="/CodeHandler/JS/materialize.min.js"></script>
 </body>
 </html>"""
 
