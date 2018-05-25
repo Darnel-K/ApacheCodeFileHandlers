@@ -5,42 +5,39 @@ body {
 
 .codehilite .hll {
   background-color: #ffffcc;
-  background: #ffffff;
+  background: #f8f8f8;
 }
 
 .codehilite .c {
-  color: #888888;
+  color: #408080;
+  font-style: italic;
 }
 
 .codehilite .err {
-  color: #FF0000;
-  background-color: #FFAAAA;
+  border: 1px solid #FF0000;
 }
 
 .codehilite .k {
-  color: #008800;
+  color: #008000;
   font-weight: bold;
 }
 
 .codehilite .o {
-  color: #333333;
+  color: #666666;
 }
 
 .codehilite .ch, .codehilite .cm {
-  color: #888888;
+  color: #408080;
+  font-style: italic;
 }
 
 .codehilite .cp {
-  color: #557799;
+  color: #BC7A00;
 }
 
-.codehilite .cpf, .codehilite .c1 {
-  color: #888888;
-}
-
-.codehilite .cs {
-  color: #cc0000;
-  font-weight: bold;
+.codehilite .cpf, .codehilite .c1, .codehilite .cs {
+  color: #408080;
+  font-style: italic;
 }
 
 .codehilite .gd {
@@ -69,7 +66,7 @@ body {
 }
 
 .codehilite .gp {
-  color: #c65d09;
+  color: #000080;
   font-weight: bold;
 }
 
@@ -87,92 +84,86 @@ body {
 }
 
 .codehilite .kc, .codehilite .kd, .codehilite .kn {
-  color: #008800;
+  color: #008000;
   font-weight: bold;
 }
 
 .codehilite .kp {
-  color: #003388;
-  font-weight: bold;
+  color: #008000;
 }
 
 .codehilite .kr {
-  color: #008800;
+  color: #008000;
   font-weight: bold;
 }
 
 .codehilite .kt {
-  color: #333399;
-  font-weight: bold;
+  color: #B00040;
 }
 
 .codehilite .m {
-  color: #6600EE;
-  font-weight: bold;
+  color: #666666;
 }
 
 .codehilite .s {
-  background-color: #fff0f0;
+  color: #BA2121;
 }
 
 .codehilite .na {
-  color: #0000CC;
+  color: #7D9029;
 }
 
 .codehilite .nb {
-  color: #007020;
+  color: #008000;
 }
 
 .codehilite .nc {
-  color: #BB0066;
+  color: #0000FF;
   font-weight: bold;
 }
 
 .codehilite .no {
-  color: #003366;
-  font-weight: bold;
+  color: #880000;
 }
 
 .codehilite .nd {
-  color: #555555;
-  font-weight: bold;
+  color: #AA22FF;
 }
 
 .codehilite .ni {
-  color: #880000;
+  color: #999999;
   font-weight: bold;
 }
 
 .codehilite .ne {
-  color: #FF0000;
+  color: #D2413A;
   font-weight: bold;
 }
 
 .codehilite .nf {
-  color: #0066BB;
-  font-weight: bold;
+  color: #0000FF;
 }
 
 .codehilite .nl {
-  color: #997700;
-  font-weight: bold;
+  color: #A0A000;
 }
 
 .codehilite .nn {
-  color: #0e84b5;
+  color: #0000FF;
   font-weight: bold;
 }
 
 .codehilite .nt {
-  color: #007700;
+  color: #008000;
+  font-weight: bold;
 }
 
 .codehilite .nv {
-  color: #996633;
+  color: #19177C;
 }
 
 .codehilite .ow {
-  color: #000000;
+  color: #AA22FF;
   font-weight: bold;
 }
 
@@ -180,106 +171,66 @@ body {
   color: #bbbbbb;
 }
 
-.codehilite .mb, .codehilite .mf {
-  color: #6600EE;
-  font-weight: bold;
+.codehilite .mb, .codehilite .mf, .codehilite .mh, .codehilite .mi, .codehilite .mo {
+  color: #666666;
 }
 
-.codehilite .mh {
-  color: #005588;
-  font-weight: bold;
-}
-
-.codehilite .mi {
-  color: #0000DD;
-  font-weight: bold;
-}
-
-.codehilite .mo {
-  color: #4400EE;
-  font-weight: bold;
-}
-
-.codehilite .sa, .codehilite .sb {
-  background-color: #fff0f0;
-}
-
-.codehilite .sc {
-  color: #0044DD;
-}
-
-.codehilite .dl {
-  background-color: #fff0f0;
+.codehilite .sa, .codehilite .sb, .codehilite .sc, .codehilite .dl {
+  color: #BA2121;
 }
 
 .codehilite .sd {
-  color: #DD4422;
+  color: #BA2121;
+  font-style: italic;
 }
 
 .codehilite .s2 {
-  background-color: #fff0f0;
+  color: #BA2121;
 }
 
 .codehilite .se {
-  color: #666666;
+  color: #BB6622;
   font-weight: bold;
-  background-color: #fff0f0;
 }
 
 .codehilite .sh {
-  background-color: #fff0f0;
+  color: #BA2121;
 }
 
 .codehilite .si {
-  background-color: #eeeeee;
+  color: #BB6688;
+  font-weight: bold;
 }
 
 .codehilite .sx {
-  color: #DD2200;
-  background-color: #fff0f0;
+  color: #008000;
 }
 
 .codehilite .sr {
-  color: #000000;
-  background-color: #fff0ff;
+  color: #BB6688;
 }
 
 .codehilite .s1 {
-  background-color: #fff0f0;
+  color: #BA2121;
 }
 
 .codehilite .ss {
-  color: #AA6600;
+  color: #19177C;
 }
 
 .codehilite .bp {
-  color: #007020;
+  color: #008000;
 }
 
 .codehilite .fm {
-  color: #0066BB;
-  font-weight: bold;
+  color: #0000FF;
 }
 
-.codehilite .vc {
-  color: #336699;
-}
-
-.codehilite .vg {
-  color: #dd7700;
-  font-weight: bold;
-}
-
-.codehilite .vi {
-  color: #3333BB;
-}
-
-.codehilite .vm {
-  color: #996633;
+.codehilite .vc, .codehilite .vg, .codehilite .vi, .codehilite .vm {
+  color: #19177C;
 }
 
 .codehilite .il {
-  color: #0000DD;
-  font-weight: bold;
+  color: #666666;
 }
 /*# sourceMappingURL=MaterialLight.css.map */
