@@ -10,6 +10,15 @@ body {
   padding: 10px;
 }
 
+body a {
+  color: #DDD;
+  text-decoration: none;
+}
+
+body a:hover {
+  color: #AAA;
+}
+
 body ol, body ul, body blockquote, body p {
   font-size: small;
 }
