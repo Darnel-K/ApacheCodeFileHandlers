@@ -73,6 +73,11 @@ header h1 {
 
 .codehilite pre {
   margin: 0;
+  font-size: small;
+}
+
+.codehilite pre span {
+  font-size: small;
 }
 
 .codehilitetable {
