@@ -38,7 +38,8 @@ body {
 header {
   height: 40px;
   padding: 16px;
-  width: 100vw;
+  width: -webkit-calc(100vw - (16px * 2));
+  width: calc(100vw - (16px * 2));
   position: fixed;
 }
 
@@ -50,6 +51,8 @@ header h1 {
 
 #Wrapper {
   padding: 16px;
+  width: -webkit-calc(100vw - (16px * 2));
+  width: calc(100vw - (16px * 2));
   margin-top: -webkit-calc(40px + (16px * 2));
   margin-top: calc(40px + (16px * 2));
 }

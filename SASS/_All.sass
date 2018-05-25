@@ -30,7 +30,7 @@ body
 header
     height: $HeaderHeight
     padding: $DocPadding
-    width: $DocWidth
+    width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
     position: fixed
     h1
         margin: 0
@@ -39,4 +39,5 @@ header
 
 #Wrapper
     padding: $DocPadding
+    width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
     margin-top: calc(#{$HeaderHeight} + (#{$DocPadding} * 2))
