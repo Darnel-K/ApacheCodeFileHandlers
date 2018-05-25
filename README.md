@@ -37,12 +37,12 @@ Both versions require "AllowOverride All" activated on the web server for the di
 
 ### Method 2 - Installing The .htaccess version
 
->This version is only active on the directory that contains the required files and all sub-directories with indexing allowed.
+> This version is only active on the directory that contains the required files and all sub-directories with indexing allowed.
 >
->1.  Download a copy of the folder "NSSTFAI" and the file ".htaccess".
->2.  Copy, upload or move the folder "NSSTFAI" to your domain's root directory
->3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies to all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
->4.  In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
+> 1.  Download a copy of the folder "NSSTFAI" and the file ".htaccess".
+> 2.  Copy, upload or move the folder "NSSTFAI" to your domain's root directory
+> 3.  Copy, upload or move the file ".htaccess" to the folder you wish to enable indexing and directory listing on (This also applies to all nested directories). If copying, uploading or moving the ".htaccess" file to the root directory of the domain SKIP STEP 4.
+> 4.  In the root directory create a ".htaccess" file and put "IndexIgnore .htaccess NSSTFAI" into it
 
 ## Variations:
 
@@ -92,3 +92,63 @@ Both versions require "AllowOverride All" activated on the web server for the di
 *   [jQuery.qrcode QR Code Generator](https://larsjung.de/jquery-qrcode/)
 *   [jQuery](https://jquery.com/)
 *   [Icons Used From Icons8](https://icons8.com/)
+
+```
+#!/usr/local/bin/python3.6
+
+import markdown
+import cgitb
+import os
+import re
+from markdown.extensions.toc import TocExtension
+
+cgitb.enable()
+
+DIRNAME, FullFileName = os.path.split(os.environ['PATH_TRANSLATED'])
+filename, file_extension = os.path.splitext(os.environ['PATH_TRANSLATED'])
+
+InnerHTMLString = ""
+DOC = []
+
+with open(filename + file_extension, 'r') as f:
+    InnerHTMLString = markdown.markdown(text=f.read(), output_format="html5", extensions=[
+        'subscript', 'superscript', 'markdown_checklist.extension', 'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
+
+InnerHTML = InnerHTMLString.splitlines()
+Heading = None
+HeadSearch = re.search('<(h1)[\s>]', InnerHTML[0])
+if (HeadSearch is not None):
+    if (HeadSearch.group(1) == "h1"):
+        Heading = re.search('<h1.*><a.*>(.*)<\/a><\/h1>',
+                            InnerHTML[0]).group(1)
+
+DOC.append("<!DOCTYPE html>")
+DOC.append("<html>")
+DOC.append("<head>")
+DOC.append('<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">')
+DOC.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
+DOC.append('<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">')
+DOC.append('<link rel="stylesheet" href="/CodeHandler/CSS/MaterialDark.min.css">')
+DOC.append("</head>")
+DOC.append("<body>")
+
+if (Heading is not None):
+    InnerHTML.pop(0)
+    DOC.append("<header>")
+    DOC.append("<h1>" + Heading + "</h1>")
+    DOC.append("</header>")
+else:
+    DOC.append("<header>")
+    DOC.append("<h1>" + FullFileName + "</h1>")
+    DOC.append("</header>")
+
+DOC.append("<div id='Wrapper'>")
+DOC.extend(InnerHTML)
+DOC.append("</div>")
+DOC.append("</body>")
+DOC.append("</html>")
+
+DOC = ''.join(DOC)
+print("Content-type:text/html\r\n\r\n")
+print(DOC)
+```
