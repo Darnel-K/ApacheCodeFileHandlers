@@ -22,7 +22,7 @@ Heading = None
 HeadSearch = re.search('<(h1)[\s>]', InnerHTML[0])
 if (HeadSearch is not None):
     if (HeadSearch.group(1) == "h1"):
-        Heading = re.search('<h1.*>(.*)<\/h1>',
+        Heading = re.search('<h1.*>?(.*)<\/h1>',
                             InnerHTML[0]).group(1)
 
 DOC.append("<!DOCTYPE html>")
