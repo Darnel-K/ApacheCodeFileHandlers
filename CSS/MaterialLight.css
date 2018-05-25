@@ -7,10 +7,6 @@ body {
   font-family: Consolas, Monospace;
 }
 
-body ol, body ul, body blockquote, body p {
-  font-size: small;
-}
-
 ::-webkit-scrollbar {
   height: 4px;
   width: 4px;
@@ -68,20 +64,10 @@ header h1 {
 .codehilite {
   overflow-x: auto;
   padding: 10px;
-  font-size: small;
 }
 
 .codehilite pre {
   margin: 0;
-  font-size: small;
-}
-
-.codehilite pre span {
-  font-size: small;
-}
-
-.codehilitetable {
-  font-size: small;
 }
 
 .codehilitetable .linenos {
