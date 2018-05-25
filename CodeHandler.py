@@ -41,7 +41,7 @@ if (Heading is not None):
     DOC.append("</header>")
 else:
     DOC.append("<header>")
-    DOC.append("<h1>" + FullFileName + file_extension + "</h1>")
+    DOC.append("<h1>" + FullFileName + "</h1>")
     DOC.append("</header>")
 
 DOC.extend(InnerHTML)
