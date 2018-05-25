@@ -61,25 +61,10 @@ header h1 {
   width: calc(100vw - (16px * 2));
   margin-top: -webkit-calc(40px + (16px * 2));
   margin-top: calc(40px + (16px * 2));
-  grid-template-columns: 100%;
 }
 
 .codehilite {
   overflow-x: auto;
-  padding: 10px;
-  font-size: small;
-}
-
-.codehilite pre {
-  margin: 0;
-}
-
-.codehilitetable {
-  font-size: small;
-}
-
-.codehilitetable .linenos {
-  padding: 0 10px 0 0;
 }
 
 body {
