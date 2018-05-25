@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AEAA,AAAA,IAAI,AAAC,CACD,KAAK,CAAE,KAAK,CACZ,UAAU,CAAE,MAAM,CAAI",
+    "sources": [
+        "../SASS/MaterialLight.sass",
+        "../SASS/_Vars.sass",
+        "../SASS/_All.sass"
+    ],
+    "names": [],
+    "file": "MaterialLight.min.css"
+}

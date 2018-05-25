@@ -20,7 +20,7 @@ DOC = """<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <link rel="stylesheet" href="/CodeHandler/CSS/Native.css">
-<link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
+<link rel="stylesheet" href="/CodeHandler/CSS/MaterialDark.min.css">
 </head>
 <body>
 """ + InnerHTML + """
