@@ -39,6 +39,10 @@ header {
   padding: 16px;
 }
 
+#Wrapper {
+  padding: 16px;
+}
+
 .codehilite .hll {
   background-color: #ffffcc;
   background: #f8f8f8;

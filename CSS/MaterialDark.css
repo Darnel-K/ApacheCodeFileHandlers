@@ -39,6 +39,10 @@ header {
   padding: 16px;
 }
 
+#Wrapper {
+  padding: 16px;
+}
+
 .codehilite {
   background: #202020;
   color: #d0d0d0;
