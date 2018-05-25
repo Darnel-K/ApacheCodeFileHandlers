@@ -35,8 +35,14 @@ body {
 }
 
 header {
-  height: 56px;
-  padding: 16px;
+  height: 40px;
+  margin: 16px;
+}
+
+header h1 {
+  margin: 0;
+  line-height: 40px;
+  vertical-align: middle;
 }
 
 #Wrapper {
