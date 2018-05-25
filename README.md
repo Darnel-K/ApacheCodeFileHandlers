@@ -222,3 +222,5 @@ Both versions require "AllowOverride All" activated on the web server for the di
 > 6.  Restart / Reload the apache server
 > 7.  To activate the theme add "Options +Indexes" to the directory either in the server config file or inside a ".htaccess" file located in the directory to be indexed
 ```
+
+`quote`
