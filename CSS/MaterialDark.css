@@ -52,6 +52,17 @@ header h1 {
   margin-top: calc(40px + (16px * 2));
 }
 
+body {
+  color: #D4D4D4;
+  background-color: #2F2F2F;
+}
+
+header {
+  -webkit-box-shadow: 0px -2px 20px 0px #3f3f3f;
+          box-shadow: 0px -2px 20px 0px #3f3f3f;
+  background-color: #212121;
+}
+
 .codehilite {
   background: #202020;
   color: #d0d0d0;

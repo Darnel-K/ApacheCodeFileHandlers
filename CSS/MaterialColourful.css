@@ -59,7 +59,8 @@ body {
 header {
   -webkit-box-shadow: 0px -2px 20px 0px #3f3f3f;
           box-shadow: 0px -2px 20px 0px #3f3f3f;
-  background-color: #FFF;
+  background-color: #673AB7;
+  color: #E7E2F1;
 }
 
 .codehilite .hll {
@@ -292,4 +293,4 @@ header {
 .codehilite .il {
   color: #666666;
 }
-/*# sourceMappingURL=MaterialLight.css.map */
+/*# sourceMappingURL=MaterialColourful.css.map */
