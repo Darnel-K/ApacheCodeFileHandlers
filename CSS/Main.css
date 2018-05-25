@@ -10,6 +10,10 @@ body {
   padding: 10px;
 }
 
+body img {
+  max-height: 250px;
+}
+
 body a {
   color: #AAA;
   text-decoration: none;
