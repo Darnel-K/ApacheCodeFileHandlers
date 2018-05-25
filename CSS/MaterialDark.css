@@ -61,6 +61,10 @@ header h1 {
   grid-template-columns: 100%;
 }
 
+.codehilite {
+  overflow-x: auto;
+}
+
 body {
   color: #D4D4D4;
   background-color: #2F2F2F;
