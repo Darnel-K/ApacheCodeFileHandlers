@@ -10,7 +10,7 @@ body {
   padding: 10px;
 }
 
-body ol, body ul, body blockquote {
+body ol, body ul, body blockquote, body p {
   font-size: small;
 }
 
