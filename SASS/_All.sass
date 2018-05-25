@@ -32,6 +32,7 @@ header
     padding: $DocPadding
     width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
     position: fixed
+    z-index: 50
     display: grid
     h1
         margin: 0
@@ -43,6 +44,7 @@ header
     width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
     margin-top: calc(#{$HeaderHeight} + (#{$DocPadding} * 2))
     display: grid
+    grid-template-columns: 100%
 
-.codehilitetable
-    width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
+// .codehilitetable
+    // width: calc(#{$DocWidth} - (#{$DocPadding} * 2))
