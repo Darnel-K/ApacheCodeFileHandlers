@@ -18,6 +18,7 @@ with open(filename + file_extension, 'r') as f:
     InnerHTMLString = markdown.markdown(text=f.read(), output_format="html5", extensions=[
         'subscript', 'superscript', 'markdown_checklist.extension', 'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), 'markdown.extensions.codehilite'])
 
+<<<<<<< HEAD
 InnerHTML = InnerHTMLString.splitlines()
 Heading = None
 HeadSearch = re.search('<(h1)[\s>]', InnerHTML[0])
@@ -53,5 +54,23 @@ DOC.append("</body>")
 DOC.append("</html>")
 
 DOC = '\n'.join(DOC)
+=======
+DOC = """<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<link rel="stylesheet" href="/CodeHandler/CSS/Native.css">
+<link rel="stylesheet" href="/CodeHandler/CSS/Main.min.css">
+</head>
+<body>
+""" + InnerHTML + """
+</body>
+</html>"""
+
+# # file = open(file="output.html", mode="w", encoding="utf-8")
+# # file.write(DOC)
+# # file.close()
+
+>>>>>>> parent of 896b70e... -
 print("Content-type:text/html\r\n\r\n")
 print(DOC)
