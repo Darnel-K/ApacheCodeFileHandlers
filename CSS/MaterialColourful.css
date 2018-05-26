@@ -1,6 +1,5 @@
 * {
   font-family: Consolas, Monospace;
-  font-size: 9pt !important;
 }
 
 body {
@@ -12,7 +11,7 @@ body {
 }
 
 body ol, body ul, body blockquote, body p, body pre, body pre span, body code, body .codehilite, body .codehilitetable {
-  font-size: 9pt !important;
+  font-size: small !important;
 }
 
 ::-webkit-scrollbar {
