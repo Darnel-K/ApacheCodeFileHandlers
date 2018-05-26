@@ -95,6 +95,12 @@ body #Wrapper hr {
   width: 100%;
 }
 
+body #Wrapper blockquote {
+  padding: 0 10px;
+  margin: 10px;
+  overflow: hidden;
+}
+
 body #Wrapper blockquote, body #Wrapper .codehilite {
   width: -webkit-fill-available;
   width: -moz-available;
@@ -132,6 +138,11 @@ body header {
 
 body #Wrapper hr {
   border-color: #FF3F3F;
+}
+
+body #Wrapper blockquote {
+  background-color: rgba(175, 175, 175, 0.4);
+  border-left: 3px solid #FF3F3F;
 }
 
 body #Wrapper .codehilite {
