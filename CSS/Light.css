@@ -112,10 +112,6 @@ body #Wrapper blockquote, body #Wrapper .codehilite {
   width: fill-available;
 }
 
-body #Wrapper ol, body #Wrapper ul, body #Wrapper blockquote, body #Wrapper p, body #Wrapper pre, body #Wrapper pre span, body #Wrapper code, body #Wrapper .codehilite, body #Wrapper li {
-  font-size: small !important;
-}
-
 body {
   color: #1F1F1F;
   background-color: #FAFAFA;
