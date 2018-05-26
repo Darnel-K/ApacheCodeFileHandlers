@@ -85,6 +85,7 @@ body #Wrapper {
 body #Wrapper .codehilite {
   overflow-x: auto;
   padding: 10px;
+  margin: 10px;
 }
 
 body #Wrapper .codehilite pre {
