@@ -90,6 +90,14 @@ body header {
   color: #E7E2F1;
 }
 
+body #Wrapper a {
+  color: #673AB7;
+}
+
+body #Wrapper a:hover {
+  color: #1F1F1F;
+}
+
 body #Wrapper .codehilite .hll {
   background-color: #ffffcc;
   background: #f8f8f8;
