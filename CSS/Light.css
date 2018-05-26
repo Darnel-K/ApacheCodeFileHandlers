@@ -82,6 +82,10 @@ body #Wrapper {
   grid-template-columns: 100%;
 }
 
+body #Wrapper code {
+  color: #FF931C;
+}
+
 body #Wrapper .codehilite {
   overflow-x: auto;
   padding: 10px;
