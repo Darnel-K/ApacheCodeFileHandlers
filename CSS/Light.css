@@ -38,6 +38,15 @@ body {
   font-family: Consolas, Monospace;
 }
 
+body .checklist {
+  list-style: none;
+  padding: 0 0 0 20px;
+}
+
+body .checklist li input {
+  vertical-align: middle;
+}
+
 body img {
   max-height: 250px;
   padding: 10px;
