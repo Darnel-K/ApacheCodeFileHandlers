@@ -17,7 +17,7 @@ DOC = []
 
 with open(filename + file_extension, 'r') as f:
     InnerHTMLString = markdown.markdown(text=f.read(), output_format="html5", extensions=[
-        'subscript', 'superscript', 'markdown_checklist.extension', 'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), CodeHiliteExtension(use_pygments=False)])
+        'subscript', 'superscript', 'markdown_checklist.extension', 'markdown.extensions.extra', 'markdown.extensions.admonition', 'markdown.extensions.meta', 'markdown.extensions.nl2br', TocExtension(title="Contents:", anchorlink=True), CodeHiliteExtension(linenums=False)])
 
 InnerHTML = InnerHTMLString.splitlines()
 Heading = None
