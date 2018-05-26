@@ -87,6 +87,7 @@ body header {
   -webkit-box-shadow: 0px -2px 20px 0px #3f3f3f;
           box-shadow: 0px -2px 20px 0px #3f3f3f;
   background-color: #1F1F1F;
+  color: #D4D4D4;
 }
 
 body #Wrapper a {
