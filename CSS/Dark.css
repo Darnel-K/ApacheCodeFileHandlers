@@ -85,8 +85,8 @@ body #Wrapper {
 body #Wrapper code {
   color: #FF931C;
   padding: 3px 7px;
-  -webkit-border-radius: 2px;
-          border-radius: 2px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
 }
 
 body #Wrapper .codehilite {
@@ -103,6 +103,10 @@ body #Wrapper hr {
   width: 100%;
 }
 
+body #Wrapper p {
+  line-height: 1.4;
+}
+
 body #Wrapper blockquote {
   padding: 0 10px;
   margin: 10px;
@@ -113,6 +117,8 @@ body #Wrapper blockquote, body #Wrapper .codehilite {
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill-available;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
 }
 
 body {
