@@ -26,8 +26,8 @@ body
     overflow-x: hidden
     display: grid
     font-family: $DefaultFont
-    ol, ul, blockquote, p, pre, pre span, code, .codehilite, .codehilitetable, li
-        font-size: small !important
+    img
+        max-height: 250px
     a
         text-decoration: none
     header
@@ -54,3 +54,7 @@ body
                 margin: 0
         hr
             width: 100%
+        blockquote, .codehilite, .codehilitetable
+            width: fill-available
+        ol, ul, blockquote, p, pre, pre span, code, .codehilite, .codehilitetable, li
+            font-size: small !important

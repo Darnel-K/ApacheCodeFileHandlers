@@ -3,6 +3,10 @@
 body
     color: $DarkForeColour
     background-color: $DarkBodyBackColour
+    a
+        color: $DarkAnchorColour
+        &:hover
+            color: $DarkAnchorHoverColour
     header
         box-shadow: 0px -2px 20px 0px #3f3f3f;
         background-color: $DarkHeadingBackColour
@@ -11,10 +15,6 @@ body
     #Wrapper
         hr
             border-color: $DarkAccentColour
-        a
-            color: $DarkAnchorColour
-            &:hover
-                color: $DarkAnchorHoverColour
         .codehilite
             background: #202020
             color: #d0d0d0

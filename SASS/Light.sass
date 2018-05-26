@@ -3,6 +3,10 @@
 body
     color: $LightForeColour
     background-color: $LightBodyBackColour
+    a
+        color: $LightAnchorColour
+        &:hover
+            color: $LightAnchorHoverColour
     header
         box-shadow: 0px -2px 20px 0px #3f3f3f;
         background-color: $LightHeadingBackColour
@@ -11,10 +15,6 @@ body
     #Wrapper
         hr
             border-color: $LightAccentColour
-        a
-            color: $LightAnchorColour
-            &:hover
-                color: $LightAnchorHoverColour
         .codehilite
             .hll
                 background-color: #ffffcc

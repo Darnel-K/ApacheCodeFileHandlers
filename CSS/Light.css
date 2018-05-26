@@ -38,8 +38,8 @@ body {
   font-family: Consolas, Monospace;
 }
 
-body ol, body ul, body blockquote, body p, body pre, body pre span, body code, body .codehilite, body .codehilitetable, body li {
-  font-size: small !important;
+body img {
+  max-height: 250px;
 }
 
 body a {
@@ -85,9 +85,27 @@ body #Wrapper hr {
   width: 100%;
 }
 
+body #Wrapper blockquote, body #Wrapper .codehilite, body #Wrapper .codehilitetable {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+}
+
+body #Wrapper ol, body #Wrapper ul, body #Wrapper blockquote, body #Wrapper p, body #Wrapper pre, body #Wrapper pre span, body #Wrapper code, body #Wrapper .codehilite, body #Wrapper .codehilitetable, body #Wrapper li {
+  font-size: small !important;
+}
+
 body {
   color: #1F1F1F;
   background-color: #FAFAFA;
+}
+
+body a {
+  color: #FF3F3F;
+}
+
+body a:hover {
+  color: #1F1F1F;
 }
 
 body header {
@@ -100,14 +118,6 @@ body header {
 
 body #Wrapper hr {
   border-color: #FF3F3F;
-}
-
-body #Wrapper a {
-  color: #FF3F3F;
-}
-
-body #Wrapper a:hover {
-  color: #1F1F1F;
 }
 
 body #Wrapper .codehilite .hll {
