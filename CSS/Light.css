@@ -84,6 +84,9 @@ body #Wrapper {
 
 body #Wrapper code {
   color: #FF931C;
+  padding: 5px 7px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
 }
 
 body #Wrapper .codehilite {

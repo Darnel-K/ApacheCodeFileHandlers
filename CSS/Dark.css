@@ -84,6 +84,9 @@ body #Wrapper {
 
 body #Wrapper code {
   color: #FF931C;
+  padding: 5px 7px;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
 }
 
 body #Wrapper .codehilite {
@@ -137,17 +140,20 @@ body header {
   border-bottom: 3px solid #FF3F3F;
 }
 
+body #Wrapper code {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 body #Wrapper hr {
   border-color: #FF3F3F;
 }
 
 body #Wrapper blockquote {
-  background-color: rgba(70, 70, 70, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   border-left: 3px solid #FF3F3F;
 }
 
 body #Wrapper .codehilite {
-  background: rgba(0, 0, 0, 0.3);
   color: #d0d0d0;
 }
 
