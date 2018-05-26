@@ -86,11 +86,12 @@ body {
 body header {
   -webkit-box-shadow: 0px -2px 20px 0px #3f3f3f;
           box-shadow: 0px -2px 20px 0px #3f3f3f;
-  background-color: #FFF;
+  background-color: #673AB7;
+  color: #FFF;
 }
 
 body #Wrapper a {
-  color: #3F3F3F;
+  color: #673AB7;
 }
 
 body #Wrapper a:hover {
