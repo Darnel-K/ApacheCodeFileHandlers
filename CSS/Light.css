@@ -40,6 +40,7 @@ body {
 
 body img {
   max-height: 250px;
+  padding: 10px;
 }
 
 body a {
@@ -98,6 +99,10 @@ body #Wrapper ol, body #Wrapper ul, body #Wrapper blockquote, body #Wrapper p, b
 body {
   color: #1F1F1F;
   background-color: #FAFAFA;
+}
+
+body img {
+  border-left: 3px solid #FF3F3F;
 }
 
 body a {
