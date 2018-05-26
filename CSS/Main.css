@@ -5,17 +5,3 @@ body blockquote {
     margin: 10px;
     overflow: hidden;
 }
-
-body .codehilite,
-body .codehilitetable {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    margin: 10px;
-}
-
-body .codehilitetable .codehilite {
-    background-color: initial;
-    padding: 0;
-    margin: 0;
-    width: initial;
-}
