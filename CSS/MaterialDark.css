@@ -10,8 +10,8 @@ body {
   display: grid;
 }
 
-body ol, body ul, body blockquote, body p, body pre, body pre span, body code {
-  font-size: small !important;
+body ol, body ul, body blockquote, body p, body pre, body pre span, body code, body .codehilite, body .codehilitetable {
+  font-size: 9pt !important;
 }
 
 ::-webkit-scrollbar {
