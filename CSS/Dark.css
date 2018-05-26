@@ -78,6 +78,10 @@ body #Wrapper .codehilite pre {
   margin: 0;
 }
 
+body #Wrapper hr {
+  width: 100%;
+}
+
 body {
   color: #D4D4D4;
   background-color: #2F2F2F;
@@ -89,6 +93,10 @@ body header {
   background-color: #1F1F1F;
   color: #D4D4D4;
   border-bottom: 3px solid #FF3F3F;
+}
+
+body #Wrapper hr {
+  border-color: #FF3F3F;
 }
 
 body #Wrapper a {

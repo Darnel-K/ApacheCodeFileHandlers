@@ -19,15 +19,6 @@ body hr {
     border-color: #6f6f6f;
 }
 
-body a {
-    color: #aaa;
-    text-decoration: none;
-}
-
-body a:hover {
-    color: #fff;
-}
-
 body ol,
 body ul,
 body blockquote,
