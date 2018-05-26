@@ -26,11 +26,14 @@
   border: thin solid #666;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
   display: grid;
   font-family: Consolas, Monospace;
 }

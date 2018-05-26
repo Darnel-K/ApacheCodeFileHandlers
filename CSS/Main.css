@@ -1,29 +1,5 @@
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: consolas, monospace, Courier New, Courier;
-    background-color: #1f1f1f;
-    color: #fff;
-    padding: 10px;
-}
-
 body img {
     max-height: 250px;
-}
-
-body hr {
-    border-color: #6f6f6f;
-}
-
-body ol,
-body ul,
-body blockquote,
-body p {
-    font-size: small;
 }
 
 body blockquote {
