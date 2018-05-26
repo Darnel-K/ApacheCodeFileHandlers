@@ -89,11 +89,11 @@ body header {
   background-color: #1F1F1F;
 }
 
-body header #Wrapper a {
+body #Wrapper a {
   color: #AAA;
 }
 
-body header #Wrapper a:hover {
+body #Wrapper a:hover {
   color: #D4D4D4;
 }
 
