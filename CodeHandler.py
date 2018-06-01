@@ -35,6 +35,7 @@ f = open(FILENAME + FILE_EXTENSION, 'r')
 
 def FormatFile(text, extension):
     global Heading
+    InnerHTML = None
     if (extension == ".md"):
         InnerHTML = markdown.markdown(
             text=text, output_format="html5", extensions=EXTENSIONS).splitlines()
@@ -45,13 +46,13 @@ def FormatFile(text, extension):
                     Heading = re.search(
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
-        return InnerHTML
     elif (extension in ALLOWED_EXTENSIONS):
         pass
     else:
         raise NotImplementedError("File Type Not Supported Yet!")
     if (Heading is None):
         Heading = FULL_FILE_NAME
+    return InnerHTML
 
 
 InnerHTML = FormatFile(f.read(), FILE_EXTENSION)
