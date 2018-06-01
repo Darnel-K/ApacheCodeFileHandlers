@@ -12,7 +12,7 @@ from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = [".py", ".json"]
+ALLOWED_EXTENSIONS = [".py", ".json", ".js"]
 EXTENSIONS = [
     'subscript',
     'superscript',
