@@ -6,6 +6,9 @@ import os
 import re
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.codehilite import CodeHiliteExtension
+from pygments import highlight
+from pygments.lexers import guess_lexer, guess_lexer_for_filename
+from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
@@ -47,14 +50,11 @@ def FormatFile(text, extension):
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
     elif (extension.lower() in ALLOWED_EXTENSIONS):
-        from pygments import highlight
-        from pygments.lexers import guess_lexer, guess_lexer_for_filename
-        from pygments.formatters import HtmlFormatter
-        code = f.read()
+        code = text
         lexer = guess_lexer(code)
         formatter = HtmlFormatter(linenos=False, cssclass="codehilite")
         result = highlight(code, lexer, formatter)
-        InnerHTML = [f.read()]
+        InnerHTML = [code]
     else:
         InnerHTML = ["<h2>File Type Not Supported Yet!</h2>"]
     if (Heading is None):
