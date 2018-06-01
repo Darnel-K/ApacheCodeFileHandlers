@@ -95,5 +95,3 @@ else:
     DOC = '\n'.join(DOC)
     print("Content-type:text/html\r\n\r\n")
     print(DOC)
-    for name, value in os.environ.items():
-        print("%s\t= %s <br/>" % (name, value))
