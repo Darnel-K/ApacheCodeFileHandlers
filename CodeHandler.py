@@ -9,7 +9,7 @@ from markdown.extensions.codehilite import CodeHiliteExtension
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = []
+ALLOWED_EXTENSIONS = [".py"]
 EXTENSIONS = [
     'subscript',
     'superscript',
@@ -46,11 +46,10 @@ def FormatFile(text, extension):
                     Heading = re.search(
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
-    elif (extension in ALLOWED_EXTENSIONS):
+    elif (extension.lower() in ALLOWED_EXTENSIONS):
         InnerHTML = []
     else:
-        InnerHTML = []
-        raise NotImplementedError("File Type Not Supported Yet!")
+        InnerHTML = ["<h2>File Type Not Supported Yet!</h2>"]
     if (Heading is None):
         Heading = FULL_FILE_NAME
     return InnerHTML
