@@ -47,8 +47,9 @@ def FormatFile(text, extension):
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
     elif (extension in ALLOWED_EXTENSIONS):
-        pass
+        InnerHTML = []
     else:
+        InnerHTML = []
         raise NotImplementedError("File Type Not Supported Yet!")
     if (Heading is None):
         Heading = FULL_FILE_NAME
