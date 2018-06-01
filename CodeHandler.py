@@ -62,10 +62,11 @@ def FormatFile(text, extension):
     return InnerHTML
 
 
+FileOutput = f.read()
 if ("HTTP_REFERER" in os.environ):
-    print(f.read())
+    print(FileOutput)
 else:
-    InnerHTML = FormatFile(f.read(), FILE_EXTENSION)
+    InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
 
     DOC.append("<!DOCTYPE html>")
     DOC.append("<html>")
