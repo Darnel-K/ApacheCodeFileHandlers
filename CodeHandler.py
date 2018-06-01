@@ -40,14 +40,11 @@ def FormatFile(text, extension):
             text=text, output_format="html5", extensions=EXTENSIONS).splitlines()
         if (Heading is None):
             search = re.search('<(h1)[\s>]', InnerHTML[0])
-            try:
-                if (search is not None and search.group(1) == "h1"):
+            if (search is not None):
+                if (search.group(1) == "h1"):
                     Heading = re.search(
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
-            except Exception as e:
-                print(e)
-
         return InnerHTML
     elif (extension in ALLOWED_EXTENSIONS):
         pass
