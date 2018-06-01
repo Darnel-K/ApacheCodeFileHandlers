@@ -65,9 +65,9 @@ def FormatFile(text, extension):
 
 FileOutput = f.read()
 if ("HTTP_REFERER" in os.environ):
-    print("Content-type:text/html\r\n\r\n")
+    mime = mimetypes.guess_type(FULL_FILE_NAME)
+    print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
-    print(mimetypes.guess_type(FULL_FILE_NAME))
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
 
