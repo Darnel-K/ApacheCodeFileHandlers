@@ -55,6 +55,7 @@ def FormatFile(text, extension):
         formatter = HtmlFormatter(linenos=False, cssclass="codehilite")
         result = highlight(code, lexer, formatter)
         InnerHTML = [result]
+        InnerHTML = os.environ
     else:
         InnerHTML = ["<h2>File Type Not Supported Yet!</h2>"]
     if (Heading is None):
