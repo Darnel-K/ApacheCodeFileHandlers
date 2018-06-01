@@ -9,7 +9,7 @@ from markdown.extensions.codehilite import CodeHiliteExtension
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = [".py"]
+ALLOWED_EXTENSIONS = [""]
 EXTENSIONS = [
     'subscript',
     'superscript',
