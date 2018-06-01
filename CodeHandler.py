@@ -15,6 +15,7 @@ cgitb.enable()
 
 ALLOWED_EXTENSIONS = [".py", ".json", ".js",
                       ".sql", ".txt", ".sass", ".css", ".cs", ".java"]
+SHOW_RAW = [".css", ".js", ".json"]
 EXTENSIONS = [
     'subscript',
     'superscript',
@@ -65,7 +66,7 @@ def FormatFile(text, extension):
 
 
 FileOutput = f.read()
-if ("HTTP_REFERER" in os.environ):
+if ("HTTP_REFERER" in os.environ and FILE_EXTENSION.lower() in SHOW_RAW):
     mime = mimetypes.guess_type(FULL_FILE_NAME)
     print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
