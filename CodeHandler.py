@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3.6
 
-import markdown
 import cgitb
+import markdown
 import os
 import re
 from markdown.extensions.toc import TocExtension
@@ -9,7 +9,7 @@ from markdown.extensions.codehilite import CodeHiliteExtension
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = []
+ALLOWED_EXTENSIONS = [".py"]
 EXTENSIONS = [
     'subscript',
     'superscript',
