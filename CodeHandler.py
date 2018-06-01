@@ -2,6 +2,7 @@
 
 import cgitb
 import markdown
+import mimetypes
 import os
 import re
 from markdown.extensions.toc import TocExtension
@@ -66,6 +67,7 @@ FileOutput = f.read()
 if ("HTTP_REFERER" in os.environ):
     print("Content-type:text/html\r\n\r\n")
     print(FileOutput)
+    print(mimetypes.guess_type(FULL_FILE_NAME))
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
 
