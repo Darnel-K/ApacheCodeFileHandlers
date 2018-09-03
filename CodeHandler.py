@@ -13,7 +13,7 @@ from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = [".sql", ".txt", ".sass", ".cs", ".py", ".java"]
+ALLOWED_EXTENSIONS = [".sql", ".py", ".txt"]
 SHOW_RAW = []
 EXTENSIONS = [
     'subscript',
@@ -88,6 +88,7 @@ else:
     DOC.append("<h1>" + Heading + "</h1>")
     DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
+    DOC.append("<p>" + FILE_EXTENSION + "</p>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
     DOC.append("</body>")
