@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,IADA,CAAC,QAAQ,CAAC,WAAW,CACrB,IAAI,CAAC;EACD,KAAK,EAAE,OAAO;EACd,gBAAgB,EAAE,OAAO;CAAG",
+    "sources": [
+        "../SASS/EXT.TXT.sass"
+    ],
+    "names": [],
+    "file": "EXT.TXT.css"
+}

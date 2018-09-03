@@ -37,7 +37,7 @@ FILENAME, FILE_EXTENSION = os.path.splitext(os.environ['PATH_TRANSLATED'])
 URL_QUERY = parse_qs(os.environ['QUERY_STRING'])
 Heading = None
 DOC = []
-STYLED_EXTENSIONS = [".md", ".txt"]
+STYLED_EXTENSIONS = [".txt"]
 f = open(FILENAME + FILE_EXTENSION, 'r')
 
 
@@ -83,7 +83,7 @@ else:
     if (FILE_EXTENSION in STYLED_EXTENSIONS):
         special_styles = FILE_EXTENSION.upper()
     else:
-        special_styles = "DEFAULT"
+        special_styles = ".DEFAULT"
 
     DOC.append("<!DOCTYPE html>")
     DOC.append("<html>")
@@ -95,7 +95,7 @@ else:
     # DOC.append('<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">')
     DOC.append('<link rel="stylesheet" href="/CH/CSS/' +
                stylesheet + '.min.css">')
-    DOC.append('<link rel="stylesheet" href="/CH/CSS/EXT.' +
+    DOC.append('<link rel="stylesheet" href="/CH/CSS/EXT' +
                special_styles + '.min.css">')
     DOC.append("</head>")
     DOC.append("<body>")
