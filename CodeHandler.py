@@ -14,7 +14,6 @@ from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = [".sql", ".py"]
 ALWAYS_ACTIVE = [".md", ".txt"]
 FORMAT_QUERY = "CH_FORMAT"
 EXTENSIONS = [
@@ -72,6 +71,13 @@ if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[
     print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
+    if ("CH_BRIGHTNESS" in URL_QUERY):
+        if (URL_QUERY["CH_BRIGHTNESS"] in [1, "1", "light", "l"]):
+            stylesheet = "Light"
+        else:
+            stylesheet = "Dark"
+    else:
+        stylesheet = "Dark"
 
     DOC.append("<!DOCTYPE html>")
     DOC.append("<html>")
@@ -81,8 +87,8 @@ else:
         '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">')
     # DOC.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     # DOC.append('<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">')
-    DOC.append('<link rel="stylesheet" href="/CH/CSS/Dark.min.css">')
-    # DOC.append('<link rel="stylesheet" href="/CH/CSS/Light.min.css">')
+    DOC.append('<link rel="stylesheet" href="/CH/CSS/' +
+               stylesheet + '.min.css">')
     DOC.append("</head>")
     DOC.append("<body>")
     DOC.append("<header>")
