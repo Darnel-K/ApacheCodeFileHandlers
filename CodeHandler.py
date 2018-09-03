@@ -56,7 +56,7 @@ def FormatFile(text, extension):
                     InnerHTML.pop(0)
     else:
         code = text
-        lexer = guess_lexer_for_filename(FULL_FILE_NAME, code)
+        lexer = guess_lexer(code)
         formatter = HtmlFormatter(linenos=False, cssclass="codehilite")
         result = highlight(code, lexer, formatter)
         InnerHTML = [result]
