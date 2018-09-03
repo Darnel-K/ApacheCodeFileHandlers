@@ -15,7 +15,7 @@ from pygments.formatters import HtmlFormatter
 cgitb.enable()
 
 ALLOWED_EXTENSIONS = [".sql", ".py"]
-ALWAYS_ACTIVE = [".md"]
+ALWAYS_ACTIVE = [".md", ".txt"]
 FORMAT_QUERY = "CH_FORMAT"
 EXTENSIONS = [
     'subscript',
@@ -66,7 +66,7 @@ def FormatFile(text, extension):
 
 
 FileOutput = f.read()
-if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (int(URL_QUERY[FORMAT_QUERY][0]) != 1))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
+if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY][0] != 1))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
     mime = mimetypes.guess_type(FULL_FILE_NAME)
     print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
