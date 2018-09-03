@@ -34,6 +34,7 @@ html, body {
 body {
   width: 100vw;
   overflow-x: hidden;
+  display: -ms-grid;
   display: grid;
   font-family: Consolas, Monospace;
 }
@@ -63,6 +64,7 @@ body header {
   width: calc(100vw - (16px * 2));
   position: fixed;
   z-index: 50;
+  display: -ms-grid;
   display: grid;
 }
 
@@ -78,8 +80,10 @@ body #Wrapper {
   width: calc(100vw - (16px * 2));
   margin-top: -webkit-calc(40px + (16px * 2));
   margin-top: calc(40px + (16px * 2));
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 100%;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
 }
 
 body #Wrapper code {
@@ -393,4 +397,4 @@ body #Wrapper .codehilite .vc, body #Wrapper .codehilite .vg, body #Wrapper .cod
 body #Wrapper .codehilite .il {
   color: #666666;
 }
-/*# sourceMappingURL=Light.css.map */
+/*# sourceMappingURL=LIGHT.css.map */

@@ -1,7 +1,0 @@
-body blockquote {
-    padding: 1px 10px;
-    background-color: rgba(70, 70, 70, 0.4);
-    border-left: 3px solid red;
-    margin: 10px;
-    overflow: hidden;
-}
