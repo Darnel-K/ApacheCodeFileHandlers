@@ -66,12 +66,12 @@ def FormatFile(text, extension):
 
 
 FileOutput = f.read()
-if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY][0] != str(1))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
-    mime=mimetypes.guess_type(FULL_FILE_NAME)
+if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY][0] != 1))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
+    mime = mimetypes.guess_type(FULL_FILE_NAME)
     print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
 else:
-    InnerHTML=FormatFile(FileOutput, FILE_EXTENSION)
+    InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
 
     DOC.append("<!DOCTYPE html>")
     DOC.append("<html>")
@@ -94,6 +94,6 @@ else:
     DOC.append("</body>")
     DOC.append("</html>")
 
-    DOC='\n'.join(DOC)
+    DOC = '\n'.join(DOC)
     print("Content-type:text/html\r\n\r\n")
     print(DOC)
