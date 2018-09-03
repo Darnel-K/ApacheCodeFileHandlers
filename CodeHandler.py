@@ -69,7 +69,7 @@ def FormatFile(text, extension):
 
 
 FileOutput = f.read()
-if ("HTTP_REFERER" in os.environ and "CH_Format" in URL_QUERY):
+if ("HTTP_REFERER" in os.environ and FILE_EXTENSION in ALLOWED_EXTENSIONS):
     mime = mimetypes.guess_type(FULL_FILE_NAME)
     print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
