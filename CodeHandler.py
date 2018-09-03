@@ -3,7 +3,7 @@
 import cgitb
 import markdown
 import mimetypes
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 import os
 import re
 from markdown.extensions.toc import TocExtension
@@ -90,7 +90,7 @@ else:
     DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
     DOC.append(
-        "<p>" + str(urlparse.parse_qs(os.environ['QUERY_STRING'])) + "</p>")
+        "<p>" + str(parse_qs(os.environ['QUERY_STRING'])) + "</p>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
     DOC.append("</body>")
