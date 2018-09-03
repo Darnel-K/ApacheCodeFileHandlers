@@ -14,8 +14,9 @@ from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
-ALLOWED_EXTENSIONS = [".sql", ".py", ".txt"]
-SHOW_RAW = []
+ALLOWED_EXTENSIONS = [".sql", ".py"]
+ALWAYS_ACTIVE = [".md"]
+FORMAT_QUERY = "CH_FORMAT"
 EXTENSIONS = [
     'subscript',
     'superscript',
@@ -35,7 +36,6 @@ EXTENSIONS = [
 DIRNAME, FULL_FILE_NAME = os.path.split(os.environ['PATH_TRANSLATED'])
 FILENAME, FILE_EXTENSION = os.path.splitext(os.environ['PATH_TRANSLATED'])
 URL_QUERY = parse_qs(os.environ['QUERY_STRING'])
-lexer = ""
 Heading = None
 DOC = []
 f = open(FILENAME + FILE_EXTENSION, 'r')
@@ -54,22 +54,19 @@ def FormatFile(text, extension):
                     Heading = re.search(
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
-    elif (extension.lower() in ALLOWED_EXTENSIONS):
-        global lexer
+    else:
         code = text
         lexer = guess_lexer(code)
         formatter = HtmlFormatter(linenos=False, cssclass="codehilite")
         result = highlight(code, lexer, formatter)
         InnerHTML = [result]
-    else:
-        InnerHTML = ["<h2>File Type Not Supported Yet!</h2>"]
     if (Heading is None):
         Heading = FULL_FILE_NAME
     return InnerHTML
 
 
 FileOutput = f.read()
-if ("HTTP_REFERER" in os.environ and FILE_EXTENSION in ALLOWED_EXTENSIONS):
+if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY] != 1))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
     mime = mimetypes.guess_type(FULL_FILE_NAME)
     print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
@@ -84,15 +81,14 @@ else:
         '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">')
     # DOC.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     # DOC.append('<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">')
-    DOC.append('<link rel="stylesheet" href="/CodeHandler/CSS/Dark.min.css">')
-    # DOC.append('<link rel="stylesheet" href="/CodeHandler/CSS/Light.min.css">')
+    DOC.append('<link rel="stylesheet" href="/CH/CSS/Dark.min.css">')
+    # DOC.append('<link rel="stylesheet" href="/CH/CSS/Light.min.css">')
     DOC.append("</head>")
     DOC.append("<body>")
     DOC.append("<header>")
     DOC.append("<h1>" + Heading + "</h1>")
     DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
-    DOC.append("<p>" + str(lexer) + "</p>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
     DOC.append("</body>")
