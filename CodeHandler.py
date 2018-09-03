@@ -14,7 +14,7 @@ from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
-ALWAYS_ACTIVE = [".md", ".txt"]
+ALWAYS_ACTIVE = [".md", ".txt", ".sql"]
 FORMAT_QUERY = "CH_FORMAT"
 EXTENSIONS = [
     'subscript',
@@ -67,8 +67,8 @@ def FormatFile(text, extension):
 
 FileOutput = f.read()
 if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY][0].lower() not in [1, "1", "yes", "y"]))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
-    # mime = mimetypes.guess_type(FULL_FILE_NAME)
-    # print("Content-type:" + mime[0] + "\r\n\r\n")
+    mime = mimetypes.guess_type(FULL_FILE_NAME)
+    print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
