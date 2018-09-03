@@ -14,7 +14,7 @@ from pygments.formatters import HtmlFormatter
 
 cgitb.enable()
 
-ALWAYS_ACTIVE = [".md", ".txt", ".sql", ".cs"]
+ALWAYS_ACTIVE = [".md", ".txt", ".sql", ".java"]
 FORMAT_QUERY = "CH_FORMAT"
 EXTENSIONS = [
     'subscript',
