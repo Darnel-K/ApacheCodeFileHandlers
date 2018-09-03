@@ -3,11 +3,11 @@
 import cgitb
 import markdown
 import mimetypes
-from urllib.parse import urlparse, parse_qs
 import os
 import re
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.codehilite import CodeHiliteExtension
+from urllib.parse import parse_qs
 from pygments import highlight
 from pygments.lexers import guess_lexer, guess_lexer_for_filename
 from pygments.formatters import HtmlFormatter
@@ -34,6 +34,8 @@ EXTENSIONS = [
 ]
 DIRNAME, FULL_FILE_NAME = os.path.split(os.environ['PATH_TRANSLATED'])
 FILENAME, FILE_EXTENSION = os.path.splitext(os.environ['PATH_TRANSLATED'])
+URL_QUERY = parse_qs(os.environ['QUERY_STRING'])
+lexer = ""
 Heading = None
 DOC = []
 f = open(FILENAME + FILE_EXTENSION, 'r')
@@ -53,6 +55,7 @@ def FormatFile(text, extension):
                         '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
                     InnerHTML.pop(0)
     elif (extension.lower() in ALLOWED_EXTENSIONS):
+        global lexer
         code = text
         lexer = guess_lexer(code)
         formatter = HtmlFormatter(linenos=False, cssclass="codehilite")
@@ -66,7 +69,7 @@ def FormatFile(text, extension):
 
 
 FileOutput = f.read()
-if ("HTTP_REFERER" in os.environ and FILE_EXTENSION.lower() in SHOW_RAW):
+if ("HTTP_REFERER" in os.environ and "CH_Format" in URL_QUERY):
     mime = mimetypes.guess_type(FULL_FILE_NAME)
     print("Content-type:" + mime[0] + "\r\n\r\n")
     print(FileOutput)
@@ -89,8 +92,7 @@ else:
     DOC.append("<h1>" + Heading + "</h1>")
     DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
-    DOC.append(
-        "<p>" + str(parse_qs(os.environ['QUERY_STRING'])) + "</p>")
+    DOC.append("<p>" + str(lexer) + "</p>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
     DOC.append("</body>")
