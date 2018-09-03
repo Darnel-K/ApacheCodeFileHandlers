@@ -3,7 +3,7 @@
 import cgitb
 import markdown
 import mimetypes
-import urlparse
+from urllib.parse import urlparse
 import os
 import re
 from markdown.extensions.toc import TocExtension
@@ -72,8 +72,7 @@ if ("HTTP_REFERER" in os.environ and FILE_EXTENSION.lower() in SHOW_RAW):
     print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
-    url = os.environ["REQUEST_URI"]
-    parsed = urlparse.urlparse(url)
+
     DOC.append("<!DOCTYPE html>")
     DOC.append("<html>")
     DOC.append("<head>")
@@ -90,7 +89,8 @@ else:
     DOC.append("<h1>" + Heading + "</h1>")
     DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
-    DOC.append("<p>" + str(urlparse.parse_qs(parsed.query)) + "</p>")
+    DOC.append(
+        "<p>" + str(urlparse.parse_qs(os.environ['QUERY_STRING'])) + "</p>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
     DOC.append("</body>")
