@@ -88,7 +88,7 @@ else:
     DOC.append("<h1>" + Heading + "</h1>")
     DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
-    DOC.append("<p>" + FILE_EXTENSION + "</p>")
+    DOC.append("<p>" + str(FILE_EXTENSION) + "</p>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
     DOC.append("</body>")
