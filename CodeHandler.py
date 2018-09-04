@@ -12,7 +12,7 @@ from pygments import highlight
 from pygments.lexers import guess_lexer, guess_lexer_for_filename
 from pygments.formatters import HtmlFormatter
 
-cgitb.enable()
+# cgitb.enable()
 
 ALWAYS_ACTIVE = [".md", ".txt", ".sql", ".cs", ".java"]
 FORMAT_QUERY = "CH_FORMAT"
