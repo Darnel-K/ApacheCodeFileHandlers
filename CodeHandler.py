@@ -5,6 +5,7 @@ import markdown
 import mimetypes
 import os
 import re
+import magic
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.codehilite import CodeHiliteExtension
 from urllib.parse import parse_qs
@@ -67,11 +68,13 @@ def FormatFile(text, extension):
 
 FileOutput = f.read()
 if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY][0].lower() not in [1, "1", "yes", "y"]))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
+    m = magic.Magic(mime=True)
+    m.from_file(FILENAME + FILE_EXTENSION)
     mime = mimetypes.guess_type(FULL_FILE_NAME, strict=False)
     if (mime[0] == None):
         mime = ("text/html", None)
-    # print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
-    print(str(mime))
+    print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
+    print(m.from_file(FILENAME + FILE_EXTENSION))
     print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
