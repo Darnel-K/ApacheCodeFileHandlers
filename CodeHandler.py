@@ -71,6 +71,7 @@ if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[
     if (mime[0] == None):
         mime = ("text/html",)
     print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
+    print(str(mime))
     print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
