@@ -73,7 +73,7 @@ if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[
     # mime = mimetypes.guess_type(FULL_FILE_NAME, strict=False)
     mime = (None,)
     if (mime[0] == None):
-        mime = ("application/octet-stream", None)
+        mime = ("text/plain", None)
     print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
     # print(m.from_file(FILENAME + FILE_EXTENSION))
     print(FileOutput)
