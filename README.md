@@ -24,6 +24,7 @@
 
 > 1.  Install all the python packages listed above with the command below.
 >
+>         #!powershell
 >         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
 >
 > 2.
