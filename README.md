@@ -1,6 +1,6 @@
 # File Handler
 
-**Only Tested on Apache 2.4, Might Work on Newer or Older Versions**
+**Only Tested on Apache 2.4, Might Work on Newer or Older Versions.**
 
 - [File Handler](#file-handler)
     - [URL Query Parameters:](#url-query-parameters)
@@ -15,7 +15,7 @@
 
 1.  ### CH_FORMAT
 
-    > Purpose: Enables or disables function of this script
+    > Purpose: Enables or disables function of this script.
     >
     > **Some File Extensions are enabled by default making this parameter useless, going to change this.**
     >
@@ -40,7 +40,7 @@
 
 2.  ### CH_BRIGHTNESS
 
-    > Purpose: Controls whether light or dark theme is shown
+    > Purpose: Controls whether light or dark theme is shown.
     >
     > Accepted Values:
     >
