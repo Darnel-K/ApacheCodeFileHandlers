@@ -84,7 +84,6 @@
 
 > 1.  Install all the python packages listed above.
 >
->         #!powershell
 >         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
 >
 > 2.  Clone this repository to a directory inside the ServerRoot
