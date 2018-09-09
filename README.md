@@ -3,18 +3,21 @@
 **Only For Apache 2.4+**
 
 - [File Handler](#file-handler)
-    - [Required Python 3.6 Packages](#required-python-36-packages)
+    - [Requirements](#requirements)
     - [Installation Instructions:](#installation-instructions)
 
-## Required Python 3.6 Packages
+## Requirements
 
-> -   asciimatics
-> -   Markdown
-> -   markdown-checklist
-> -   MarkdownSubscript
-> -   MarkdownSuperscript
-> -   Pygments
-> -   python-magic
+> -   Apache 2.4+
+> -   Python 3.6+
+> -   Python 3 Packages:
+>     -   asciimatics
+>     -   Markdown
+>     -   markdown-checklist
+>     -   MarkdownSubscript
+>     -   MarkdownSuperscript
+>     -   Pygments
+>     -   python-magic
 
 ## Installation Instructions:
 
@@ -24,9 +27,6 @@
 
 > 1.  Install all the python packages listed above with the command below.
 >
->         #!powershell
 >         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
 >
-> 2.
-
-<!-- pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic -->
+> 2.  Clone this repository to a directory inside the ServerRoot
