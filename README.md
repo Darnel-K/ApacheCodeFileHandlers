@@ -17,9 +17,9 @@
 
     > Purpose: Enables or disables function of this script
     >
-    > **Some File Extensions are enabled by default making this parameter useless**
+    > **Some File Extensions are enabled by default making this parameter useless, going to change this.**
     >
-    > Accepted Values
+    > Accepted Values:
     >
     > -   On: 1, y, yes
     > -   Off: 0, n, no
@@ -42,7 +42,7 @@
 
     > Purpose: Controls whether light or dark theme is shown
     >
-    > Accepted Values
+    > Accepted Values:
     >
     > -   Dark Theme: 0, dark, d, night
     > -   Light Theme: 1, light, l, day
@@ -78,7 +78,7 @@
 
 ## Installation Instructions:
 
-**You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server**
+**You will require enough permissions on the host system to use git, make changes to the apache server configs and restart / reload the apache server.**
 
 **Python 3 MUST be installed on the server you wish to use this on!**
 
@@ -102,5 +102,5 @@
 >         AddHandler CodeHandler .md .sql .py .txt .java .cs
 >         # Add or remove file extensions from the AddHandler statement to enable or disable them working with this script.
 >
-> 4.  Alter repository permissions to allow the web server access. Would recommend changing ownership of the repository to the web server user and changing file permissions to 775 or 755
-> 5.  Restart / Reload the apache server
+> 4.  Alter repository permissions to allow the web server access. Would recommend changing ownership of the repository to the web server user and changing file permissions to 775 or 755.
+> 5.  Restart / Reload the apache server.
