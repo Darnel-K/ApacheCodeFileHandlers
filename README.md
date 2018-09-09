@@ -11,10 +11,6 @@
 
 ## URL Query Parameters:
 
-<aside class="warning">
-You must replace `meowmeowmeow` with your personal API key.
-</aside>
-
 **Case Insensitive**
 
 1.  ### CH_FORMAT
@@ -43,6 +39,7 @@ You must replace `meowmeowmeow` with your personal API key.
     > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no)
 
 2.  ### CH_BRIGHTNESS
+
     > Purpose: Controls whether light or dark theme is shown
     >
     > Accepted Values
