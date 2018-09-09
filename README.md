@@ -5,17 +5,23 @@
 - [File Handler](#file-handler)
     - [URL Query Parameters:](#url-query-parameters)
         - [1. ### CH_FORMAT](#1--ch_format)
-        - [2) ### CH_BRIGHTNESS](#2--ch_brightness)
+        - [2. ### CH_BRIGHTNESS](#2--ch_brightness)
     - [Requirements:](#requirements)
     - [Installation Instructions:](#installation-instructions)
 
 ## URL Query Parameters:
+
+<aside class="warning">
+You must replace `meowmeowmeow` with your personal API key.
+</aside>
 
 **Case Insensitive**
 
 1.  ### CH_FORMAT
 
     > Purpose: Enables or disables function of this script
+    >
+    > **Some File Extensions are enabled by default making this parameter useless**
     >
     > Accepted Values
     >
@@ -24,18 +30,41 @@
     >
     > Example:
     >
-    >     On:
-    >     https://hawk.kajida.uk/CH/README.md?CH_FORMAT=1
-    >     https://hawk.kajida.uk/CH/README.md?CH_FORMAT=y
-    >     https://hawk.kajida.uk/CH/README.md?CH_FORMAT=yes
+    > > On:
+    > >
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=1](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=1)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=y](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=y)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=yes](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=yes)
     >
-    >     Off:
-    >     https://hawk.kajida.uk/CH/README.md?CH_FORMAT=0
-    >     https://hawk.kajida.uk/CH/README.md?CH_FORMAT=n
-    >     https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no
+    > > Off:
+    > >
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=0](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=0)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=n](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=n)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no)
 
-2) ### CH_BRIGHTNESS
+2.  ### CH_BRIGHTNESS
     > Purpose: Controls whether light or dark theme is shown
+    >
+    > Accepted Values
+    >
+    > -   Dark Theme: 0, dark, d, night
+    > -   Light Theme: 1, light, l, day
+    >
+    > Example:
+    >
+    > > Dark:
+    > >
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=0](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=0)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=dark](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=dark)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=d](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=d)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=night](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=night)
+    >
+    > > Light:
+    > >
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=1](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=1)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=light](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=light)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=l](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=l)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=day](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=day)
 
 ## Requirements:
 
