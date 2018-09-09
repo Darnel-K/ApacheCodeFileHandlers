@@ -1,6 +1,6 @@
 # File Handler
 
-**Only Tested on Apache 2.4, might work on newer or older versions**
+**Only Tested on Apache 2.4, Might Work on Newer or Older Versions**
 
 - [File Handler](#file-handler)
     - [URL Query Parameters:](#url-query-parameters)
