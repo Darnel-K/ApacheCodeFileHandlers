@@ -86,5 +86,21 @@
 >
 >         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
 >
-> 2.  Clone this repository to a directory inside the ServerRoot
-> 3.  Create file "CH.conf" in Apache
+> 2.  Clone this repository to a directory inside the ServerRoot.
+> 3.  Create file "CH.conf" in Apache includes directory, in the file place this code.
+>
+>         <Directory "/path/to/repository">
+>             AllowOverride None
+>             Options +ExecCGI
+>             AddHandler cgi-script .py
+>             Require all granted
+>         </Directory>
+>
+>         Alias /CH "/path/to/repository"
+>
+>         Action CodeHandler /CH/CH.py
+>         AddHandler CodeHandler .md .sql .py .txt .java .cs
+>         # Add or remove file extensions from the AddHandler statement to enable or disable them working with this script.
+>
+> 4.  Alter repository permissions to allow the web server access. Would recommend changing ownership of the repository to the web server user and changing file permissions to 775 or 755
+> 5.  Restart / Reload the apache server
