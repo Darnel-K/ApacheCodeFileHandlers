@@ -1,6 +1,6 @@
 # File Handler
 
-A Not So Simple Theme For Apache's Index
+**Only For Apache 2.4+**
 
 - [File Handler](#file-handler)
     - [Required Python 3.6 Packages](#required-python-36-packages)
@@ -8,13 +8,13 @@ A Not So Simple Theme For Apache's Index
 
 ## Required Python 3.6 Packages
 
--   asciimatics
--   Markdown
--   markdown-checklist
--   MarkdownSubscript
--   MarkdownSuperscript
--   Pygments
--   python-magic
+> -   asciimatics
+> -   Markdown
+> -   markdown-checklist
+> -   MarkdownSubscript
+> -   MarkdownSuperscript
+> -   Pygments
+> -   python-magic
 
 ## Installation Instructions:
 
@@ -26,6 +26,6 @@ A Not So Simple Theme For Apache's Index
 >
 >         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
 >
-> 2.  d
+> 2.
 
 <!-- pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic -->
