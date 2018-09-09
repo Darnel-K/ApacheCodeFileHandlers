@@ -3,10 +3,10 @@
 **Only For Apache 2.4+**
 
 - [File Handler](#file-handler)
-    - [Requirements](#requirements)
+    - [Requirements:](#requirements)
     - [Installation Instructions:](#installation-instructions)
 
-## Requirements
+## Requirements:
 
 > -   Apache 2.4+
 > -   Python 3.6+
@@ -25,7 +25,7 @@
 
 **Python 3 MUST be installed on the server you wish to use this on!**
 
-> 1.  Install all the python packages listed above with the command below.
+> 1.  Install all the python packages listed above.
 >
 >         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
 >
