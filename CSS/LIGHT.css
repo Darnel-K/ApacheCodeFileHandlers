@@ -117,7 +117,7 @@ body #Wrapper blockquote {
   overflow: hidden;
 }
 
-body #Wrapper blockquote, body #Wrapper .codehilite {
+body #Wrapper blockquote, body #Wrapper .codehilite, body #Wrapper blockquote code {
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill-available;
