@@ -83,9 +83,9 @@
 **Python 3 MUST be installed on the server you wish to use this on!**
 
 > 1.  Install all the python packages listed above.
->     ```
->     #!powershell
->     pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
->     ```
+>
+>         #!powershell
+>         pip install asciimatics Markdown markdown-checklist MarkdownSubscript MarkdownSuperscript Pygments python-magic
+>
 > 2.  Clone this repository to a directory inside the ServerRoot
 > 3.  Create file "CH.conf" in Apache
