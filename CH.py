@@ -144,8 +144,8 @@ else:
     DOC.append("<meta property='og:type' content='website'/>")
     DOC.append("<meta property='og:url' content='" +
                ('https://' if os.environ['HTTPS'].lower() == 'on' else 'http://') + os.environ['HTTP_HOST'] + os.environ['REQUEST_URI'] + "'/>")
-    DOC.append(
-        "<meta property='og:image:alt' content=''/>")
+    # DOC.append(
+    #     "<meta property='og:image:alt' content=''/>")
     DOC.append(
         "<meta property='og:description' content=''/>")
     DOC.append("<meta property='og:locale' content='en_GB'/>")
