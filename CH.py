@@ -142,7 +142,8 @@ else:
     DOC.append("<meta name='theme-color' content='#2F2F2F'>")
     DOC.append("<meta property='og:title' content='View File " + Heading + "'/>")
     DOC.append("<meta property='og:type' content='website'/>")
-    DOC.append("")
+    DOC.append("<meta property='og:url' content='" +
+               (os.environ['HTTPS']) + "'/>")
     DOC.append("")
     DOC.append("")
     DOC.append("")
