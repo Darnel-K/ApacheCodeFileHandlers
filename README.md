@@ -44,24 +44,18 @@
     >
     > Accepted Values:
     >
-    > -   Dark Theme: 0, dark, d, night
-    > -   Light Theme: 1, light, l, day
+    > -   Dark Theme (Default): dark
+    > -   Light Theme: light
     >
     > Example:
     >
     > > Dark:
     > >
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=0](https://hawk.kajida.uk/CH/README.md?CH_THEME=0)
     > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=dark](https://hawk.kajida.uk/CH/README.md?CH_THEME=dark)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=d](https://hawk.kajida.uk/CH/README.md?CH_THEME=d)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=night](https://hawk.kajida.uk/CH/README.md?CH_THEME=night)
     >
     > > Light:
     > >
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=1](https://hawk.kajida.uk/CH/README.md?CH_THEME=1)
     > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=light](https://hawk.kajida.uk/CH/README.md?CH_THEME=light)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=l](https://hawk.kajida.uk/CH/README.md?CH_THEME=l)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=day](https://hawk.kajida.uk/CH/README.md?CH_THEME=day)
 
 ## Requirements:
 

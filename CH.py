@@ -77,9 +77,9 @@ if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
     if ("CH_THEME" in URL_QUERY):
-        if (URL_QUERY["CH_THEME"][0].lower() in [1, "1", "light", "l", "day"]):
+        if (URL_QUERY["CH_THEME"][0].lower() == "light"):
             stylesheet = "LIGHT"
-        elif (URL_QUERY["CH_THEME"][0].lower() in [0, "0", "dark", "d", "night"]):
+        elif (URL_QUERY["CH_THEME"][0].lower() == "dark"):
             stylesheet = "DARK"
         else:
             stylesheet = "DARK"
