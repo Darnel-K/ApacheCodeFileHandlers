@@ -87,7 +87,7 @@ if ((FORMAT_QUERY not in URL_QUERY and FILE_EXTENSION not in ALWAYS_ACTIVE) or (
     if (mime[0] == None):
         mime = ("text/plain", None)
     print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
-    print(FileOutput)
+    print(os.environ)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
     if (THEME_QUERY in URL_QUERY):
