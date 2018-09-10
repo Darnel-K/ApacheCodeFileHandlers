@@ -1,6 +1,6 @@
 {
     "DefaultTheme": "DARK",
-    "ExtensionsActiveByDefault": [".md", ".txt", ".sql", ".java", ".cs", ".py"],
+    "ExtensionsActiveByDefault": [".md", ".txt", ".sql", ".java", ".cs"],
     "URL_FormatKey": "CH_FORMAT",
     "URL_ThemeKey": "CH_THEME",
     "AvailableThemes": {
