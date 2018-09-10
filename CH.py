@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3.6
 
 import cgitb
+import json
 import markdown
 import mimetypes
 import os
@@ -14,9 +15,16 @@ from pygments.lexers import guess_lexer, guess_lexer_for_filename
 from pygments.formatters import HtmlFormatter
 
 # cgitb.enable()
+__location__ = os.path.realpath(os.path.join(
+    os.getcwd(), os.path.dirname(__file__)))
 
-ALWAYS_ACTIVE = [".md", ".txt", ".sql", ".java", ".cs", ".py"]
-FORMAT_QUERY = "CH_FORMAT"
+settings_file = open(os.path.join(__location__, 'config.json'))
+SETTINGS = json.loads(settings_file.read())
+
+ALWAYS_ACTIVE = SETTINGS['ExtensionsActiveByDefault']
+FORMAT_QUERY = SETTINGS['URL_FormatKey']
+THEME_QUERY = SETTINGS['URL_ThemeKey']
+THEMES = SETTINGS['AvailableThemes']
 EXTENSIONS = [
     'subscript',
     'superscript',
@@ -36,33 +44,22 @@ EXTENSIONS = [
 DIRNAME, FULL_FILE_NAME = os.path.split(os.environ['PATH_TRANSLATED'])
 FILENAME, FILE_EXTENSION = os.path.splitext(os.environ['PATH_TRANSLATED'])
 URL_QUERY = parse_qs(os.environ['QUERY_STRING'])
-Heading = None
+Heading = FULL_FILE_NAME
 DOC = []
-STYLED_EXTENSIONS = [".txt"]
 f = open(FILENAME + FILE_EXTENSION, 'r')
 
 
 def FormatFile(text, extension):
-    global Heading
     InnerHTML = None
     if (extension == ".md"):
         InnerHTML = markdown.markdown(
             text=text, output_format="html5", extensions=EXTENSIONS).splitlines()
-        # if (Heading is None):
-        #     search = re.search('<(h1)[\s>]', InnerHTML[0])
-        #     if (search is not None):
-        #         if (search.group(1) == "h1"):
-        #             Heading = re.search(
-        #                 '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
-        #             InnerHTML.pop(0)
     else:
         code = text
         lexer = guess_lexer_for_filename(FULL_FILE_NAME, code)
         formatter = HtmlFormatter(linenos=False, cssclass="codehilite")
         result = highlight(code, lexer, formatter)
         InnerHTML = [result]
-    if (Heading is None):
-        Heading = FULL_FILE_NAME
     return InnerHTML
 
 
@@ -76,15 +73,14 @@ if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[
     print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
-    if ("CH_THEME" in URL_QUERY):
-        if (URL_QUERY["CH_THEME"][0].lower() == "light"):
-            stylesheet = "LIGHT"
-        elif (URL_QUERY["CH_THEME"][0].lower() == "dark"):
-            stylesheet = "DARK"
+    if (THEME_QUERY in URL_QUERY):
+        theme = URL_QUERY[THEME_QUERY][0].upper()
+        if (theme in THEMES):
+            stylesheet = THEMES[theme]['Stylesheet']
         else:
-            stylesheet = "DARK"
+            stylesheet = THEMES[SETTINGS['DefaultTheme']]['Stylesheet']
     else:
-        stylesheet = "DARK"
+        stylesheet = THEMES[SETTINGS['DefaultTheme']]['Stylesheet']
 
     DOC.append("<!DOCTYPE html>")
     DOC.append("<html>")
@@ -94,13 +90,9 @@ else:
         '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">')
     # DOC.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     # DOC.append('<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">')
-    DOC.append('<link rel="stylesheet" href="/CH/CSS/' +
-               stylesheet + '.min.css">')
+    DOC.append('<link rel="stylesheet" href="/CH/CSS/' + stylesheet + '">')
     DOC.append("</head>")
     DOC.append("<body>")
-    # DOC.append("<header>")
-    # DOC.append("<h1>" + Heading + "</h1>")
-    # DOC.append("</header>")
     DOC.append("<div id='Wrapper'>")
     DOC.extend(InnerHTML)
     DOC.append("</div>")
