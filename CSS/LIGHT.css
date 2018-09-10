@@ -88,6 +88,13 @@ body #Wrapper hr {
   width: 100%;
 }
 
+body #Wrapper h1 {
+  border-bottom: 1px solid;
+  vertical-align: middle;
+  line-height: 50px;
+  margin: 5px 0;
+}
+
 body #Wrapper p {
   line-height: 1.4;
 }
@@ -136,6 +143,10 @@ body #Wrapper code {
 }
 
 body #Wrapper hr {
+  border-color: #FF3F3F;
+}
+
+body #Wrapper h1 {
   border-color: #FF3F3F;
 }
 
