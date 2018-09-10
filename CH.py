@@ -87,7 +87,7 @@ if ((FORMAT_QUERY not in URL_QUERY and FILE_EXTENSION not in ALWAYS_ACTIVE) or (
     if (mime[0] == None):
         mime = ("text/plain", None)
     print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
-    print(FileOutput)
+    print(os.environ)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
     if (THEME_QUERY in URL_QUERY):
@@ -107,6 +107,49 @@ else:
         '<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">')
     # DOC.append('<meta name="viewport" content="width=device-width, initial-scale=1.0">')
     # DOC.append('<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">')
+    DOC.append(
+        "<link rel='shortcut icon' href='/CH/favicon.ico' type='image/x-icon'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-57x57.png' sizes='57x57'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-60x60.png' sizes='60x60'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-72x72.png' sizes='72x72'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-76x76.png' sizes='76x76'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-114x114.png' sizes='114x114'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-120x120.png' sizes='120x120'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-144x144.png' sizes='144x144'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-152x152.png' sizes='152x152'>")
+    DOC.append(
+        "<link rel='apple-touch-icon' href='/CH/Icons/apple-icon-180x180.png' sizes='180x180'>")
+    DOC.append(
+        "<link rel='icon' href='/CH/Icons/android-icon-192x192.png' type='image/png' sizes='192x192'>")
+    DOC.append(
+        "<link rel='icon' href='/CH/Icons/favicon-32x32.png' type='image/png' sizes='32x32'>")
+    DOC.append(
+        "<link rel='icon' href='/CH/Icons/favicon-96x96.png' type='image/png' sizes='96x96'>")
+    DOC.append(
+        "<link rel='icon' href='/CH/Icons/favicon-16x16.png' type='image/png' sizes='16x16'>")
+    DOC.append("<meta name='robots' content='FOLLOW'>")
+    DOC.append("<meta name='msapplication-TileColor' content='#2F2F2F'>")
+    DOC.append(
+        "<meta name='msapplication-TileImage' content='/CH/Icons/ms-icon-144x144.png'>")
+    DOC.append("<meta name='theme-color' content='#2F2F2F'>")
+    DOC.append("<meta property='og:title' content='View File " + Heading + "'/>")
+    DOC.append("<meta property='og:type' content='website'/>")
+    DOC.append("")
+    DOC.append("")
+    DOC.append("")
+    DOC.append("")
+    DOC.append("")
+    DOC.append("")
+    DOC.append("")
+    DOC.append("")
     DOC.append('<link rel="stylesheet" href="/CH/CSS/' + stylesheet + '">')
     DOC.append("</head>")
     DOC.append("<body>")
@@ -115,6 +158,17 @@ else:
     DOC.append("</div>")
     DOC.append("</body>")
     DOC.append("</html>")
+
+    # <meta name='twitter:card' content='summary'/>
+    # <meta name='twitter:site' content='@Darnel_Kumar'/>
+    # <meta name='twitter:creator' content='@Darnel_Kumar'/>
+    #
+    #
+    # <meta property='og:url' content='https://dev.darnel-k.uk/'/>
+    # <meta property='og:image' content='https://dev.darnel-k.uk/Images/OpenGraph.png'/>
+    # <meta property='og:image:alt' content='Open Graph Site Home Page Preview Image'/>
+    # <meta property='og:description' content='Development area of my site'/>
+    # <meta property='og:locale' content='en_GB'/>
 
     DOC = '\n'.join(DOC)
     print("Content-type: text/html;charset=UTF-8\r\n\r\n")
