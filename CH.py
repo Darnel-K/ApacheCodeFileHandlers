@@ -64,7 +64,7 @@ def FormatFile(text, extension):
 
 
 FileOutput = f.read()
-if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and (URL_QUERY[FORMAT_QUERY][0].lower() not in [1, "1", "yes", "y"]))) and FILE_EXTENSION not in ALWAYS_ACTIVE):
+if ((FORMAT_QUERY not in URL_QUERY or (FORMAT_QUERY in URL_QUERY and URL_QUERY[FORMAT_QUERY][0].lower() not in [1, "1", "yes", "y"])) and FILE_EXTENSION not in ALWAYS_ACTIVE):
     m = magic.Magic(mime=True)
     mime = (m.from_file(FILENAME + FILE_EXTENSION), None)
     if (mime[0] == None):
