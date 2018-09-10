@@ -87,7 +87,7 @@ if ((FORMAT_QUERY not in URL_QUERY and FILE_EXTENSION not in ALWAYS_ACTIVE) or (
     if (mime[0] == None):
         mime = ("text/plain", None)
     print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
-    print(os.environ)
+    print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
     if (THEME_QUERY in URL_QUERY):
@@ -143,7 +143,7 @@ else:
     DOC.append("<meta property='og:title' content='View File " + Heading + "'/>")
     DOC.append("<meta property='og:type' content='website'/>")
     DOC.append("<meta property='og:url' content='" +
-               (os.environ['HTTPS']) + "'/>")
+               ('https://' if os.environ['HTTPS'].lower() == 'on' else 'http://') + os.environ['HTTP_HOST'] + "'/>")
     DOC.append("")
     DOC.append("")
     DOC.append("")
@@ -163,9 +163,6 @@ else:
     # <meta name='twitter:card' content='summary'/>
     # <meta name='twitter:site' content='@Darnel_Kumar'/>
     # <meta name='twitter:creator' content='@Darnel_Kumar'/>
-    #
-    #
-    # <meta property='og:url' content='https://dev.darnel-k.uk/'/>
     # <meta property='og:image' content='https://dev.darnel-k.uk/Images/OpenGraph.png'/>
     # <meta property='og:image:alt' content='Open Graph Site Home Page Preview Image'/>
     # <meta property='og:description' content='Development area of my site'/>
