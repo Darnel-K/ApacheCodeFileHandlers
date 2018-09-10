@@ -48,13 +48,13 @@ def FormatFile(text, extension):
     if (extension == ".md"):
         InnerHTML = markdown.markdown(
             text=text, output_format="html5", extensions=EXTENSIONS).splitlines()
-        if (Heading is None):
-            search = re.search('<(h1)[\s>]', InnerHTML[0])
-            if (search is not None):
-                if (search.group(1) == "h1"):
-                    Heading = re.search(
-                        '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
-                    InnerHTML.pop(0)
+        # if (Heading is None):
+        #     search = re.search('<(h1)[\s>]', InnerHTML[0])
+        #     if (search is not None):
+        #         if (search.group(1) == "h1"):
+        #             Heading = re.search(
+        #                 '<h1.*><a.*>(.*)<\/a><\/h1>', InnerHTML[0]).group(1)
+        #             InnerHTML.pop(0)
     else:
         code = text
         lexer = guess_lexer_for_filename(FULL_FILE_NAME, code)
