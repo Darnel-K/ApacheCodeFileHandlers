@@ -7,6 +7,8 @@ import mimetypes
 import os
 import re
 import magic
+import bleach
+from bleach_whitelist import markdown_tags, markdown_attrs
 from markdown.extensions.toc import TocExtension
 from markdown.extensions.codehilite import CodeHiliteExtension
 from urllib.parse import parse_qs
@@ -69,8 +71,8 @@ f = open(FILENAME + FILE_EXTENSION, 'r')
 def FormatFile(text, extension):
     InnerHTML = None
     if (extension == ".md"):
-        InnerHTML = markdown.markdown(
-            text=text, output_format="html5", extensions=EXTENSIONS).splitlines()
+        InnerHTML = bleach.clean(markdown.markdown(
+            text=text, output_format="html5", extensions=EXTENSIONS), markdown_tags, markdown_attrs).splitlines()
     else:
         code = text
         lexer = guess_lexer_for_filename(FULL_FILE_NAME, code)
