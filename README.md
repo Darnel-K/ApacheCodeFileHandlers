@@ -96,3 +96,5 @@
 >
 > 4.  Alter repository permissions to allow the web server access. Would recommend changing ownership of the repository to the web server user and changing file permissions to 775 or 755.
 > 5.  Restart / Reload the apache server.
+> 6.  rename 'sample.config.json' to 'config.json'.
+> 7.  Modify 'config.json' to suit your needs.

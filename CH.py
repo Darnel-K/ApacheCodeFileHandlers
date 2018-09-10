@@ -18,8 +18,25 @@ from pygments.formatters import HtmlFormatter
 __location__ = os.path.realpath(os.path.join(
     os.getcwd(), os.path.dirname(__file__)))
 
-settings_file = open(os.path.join(__location__, 'config.json'))
-SETTINGS = json.loads(settings_file.read())
+try:
+    settings_file = open(os.path.join(__location__, 'config.json'))
+except FileNotFoundError:
+    SETTINGS = {
+        "DefaultTheme": "DARK",
+        "ExtensionsActiveByDefault": [".md", ".txt", ".sql", ".java", ".cs", ".py"],
+        "URL_FormatKey": "CH_FORMAT",
+        "URL_ThemeKey": "CH_THEME",
+        "AvailableThemes": {
+            "DARK": {
+                "Stylesheet": "DARK.min.css"
+            },
+            "LIGHT": {
+                "Stylesheet": "LIGHT.min.css"
+            }
+        }
+    }
+else:
+    SETTINGS = json.loads(settings_file.read())
 
 ALWAYS_ACTIVE = SETTINGS['ExtensionsActiveByDefault']
 FORMAT_QUERY = SETTINGS['URL_FormatKey']
