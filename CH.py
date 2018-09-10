@@ -87,7 +87,7 @@ if ((FORMAT_QUERY not in URL_QUERY and FILE_EXTENSION not in ALWAYS_ACTIVE) or (
     if (mime[0] == None):
         mime = ("text/plain", None)
     print("Content-type: " + mime[0] + ";charset=UTF-8\r\n\r\n")
-    print(os.environ)
+    print(FileOutput)
 else:
     InnerHTML = FormatFile(FileOutput, FILE_EXTENSION)
     if (THEME_QUERY in URL_QUERY):
@@ -143,7 +143,7 @@ else:
     DOC.append("<meta property='og:title' content='View File " + Heading + "'/>")
     DOC.append("<meta property='og:type' content='website'/>")
     DOC.append("<meta property='og:url' content='" +
-               ('https://' if os.environ['HTTPS'].lower() == 'on' else 'http://') + os.environ['HTTP_HOST'] + "'/>")
+               ('https://' if os.environ['HTTPS'].lower() == 'on' else 'http://') + os.environ['HTTP_HOST'] + os.environ['REQUEST_URI'] + "'/>")
     DOC.append("")
     DOC.append("")
     DOC.append("")
