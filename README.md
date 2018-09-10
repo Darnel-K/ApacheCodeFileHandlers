@@ -5,7 +5,7 @@
 - [File Handler](#file-handler)
     - [URL Query Parameters:](#url-query-parameters)
         - [1. ### CH_FORMAT](#1--ch_format)
-        - [2. ### CH_BRIGHTNESS](#2--ch_brightness)
+        - [2. ### CH_THEME](#2--ch_theme)
     - [Requirements:](#requirements)
     - [Installation Instructions:](#installation-instructions)
 
@@ -38,7 +38,7 @@
     > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=n](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=n)
     > > -   [https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no](https://hawk.kajida.uk/CH/README.md?CH_FORMAT=no)
 
-2.  ### CH_BRIGHTNESS
+2.  ### CH_THEME
 
     > Purpose: Controls whether light or dark theme is shown.
     >
@@ -51,17 +51,17 @@
     >
     > > Dark:
     > >
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=0](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=0)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=dark](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=dark)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=d](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=d)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=night](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=night)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=0](https://hawk.kajida.uk/CH/README.md?CH_THEME=0)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=dark](https://hawk.kajida.uk/CH/README.md?CH_THEME=dark)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=d](https://hawk.kajida.uk/CH/README.md?CH_THEME=d)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=night](https://hawk.kajida.uk/CH/README.md?CH_THEME=night)
     >
     > > Light:
     > >
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=1](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=1)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=light](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=light)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=l](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=l)
-    > > -   [https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=day](https://hawk.kajida.uk/CH/README.md?CH_BRIGHTNESS=day)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=1](https://hawk.kajida.uk/CH/README.md?CH_THEME=1)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=light](https://hawk.kajida.uk/CH/README.md?CH_THEME=light)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=l](https://hawk.kajida.uk/CH/README.md?CH_THEME=l)
+    > > -   [https://hawk.kajida.uk/CH/README.md?CH_THEME=day](https://hawk.kajida.uk/CH/README.md?CH_THEME=day)
 
 ## Requirements:
 
