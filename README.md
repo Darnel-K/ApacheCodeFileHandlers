@@ -17,8 +17,6 @@
 
     > Purpose: Enables or disables function of this script.
     >
-    > **Some File Extensions are enabled by default making this parameter useless, going to change this.**
-    >
     > Accepted Values:
     >
     > -   On: 1, y, yes
