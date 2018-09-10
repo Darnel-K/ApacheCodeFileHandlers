@@ -145,9 +145,10 @@ else:
     DOC.append("<meta property='og:url' content='" +
                ('https://' if os.environ['HTTPS'].lower() == 'on' else 'http://') + os.environ['HTTP_HOST'] + os.environ['REQUEST_URI'] + "'/>")
     DOC.append(
-        "<meta property='og:image:alt' content='" + FileOutput + "'/>")
-    DOC.append("")
-    DOC.append("")
+        "<meta property='og:image:alt' content=''/>")
+    DOC.append(
+        "<meta property='og:description' content=''/>")
+    DOC.append("<meta property='og:locale' content='en_GB'/>")
     DOC.append("")
     DOC.append("")
     DOC.append("")
@@ -164,10 +165,6 @@ else:
     # <meta name='twitter:card' content='summary'/>
     # <meta name='twitter:site' content='@Darnel_Kumar'/>
     # <meta name='twitter:creator' content='@Darnel_Kumar'/>
-    # <meta property='og:image' content='https://dev.darnel-k.uk/Images/OpenGraph.png'/>
-    # <meta property='og:image:alt' content='Open Graph Site Home Page Preview Image'/>
-    # <meta property='og:description' content='Development area of my site'/>
-    # <meta property='og:locale' content='en_GB'/>
 
     DOC = '\n'.join(DOC)
     print("Content-type: text/html;charset=UTF-8\r\n\r\n")
